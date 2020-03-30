@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DTO
+{
+    public class HOPDONG
+    {
+        public int phiTuyBien { get; set; }
+        public int phiGiaPhong { get; set; }
+        public int idPhieuThu { get; set; }
+        public int idPhongTro { get; set; }
+        public string ghiChu { get; set; }
+
+    }
+}
