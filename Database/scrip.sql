@@ -1,9 +1,9 @@
 create table KHACHHANG(
 	idKhachHang int Identity  primary key,
-	hoTenKhachHang varchar, 
-	thongTinCaNhan varchar,
-	lienLac varchar, 
-	ghiChu varchar, 
+	hoTenKhachHang varchar(100), 
+	thongTinCaNhan varchar(100),
+	lienLac varchar(100), 
+	ghiChu varchar(100), 
 	idHopDong int,
 )
 
@@ -13,7 +13,7 @@ create table HOPDONG(
 	bieuPhiGiaPhong int,
 	idPhieuThu int, 
 	idPhongTro int, 
-	ghiChu varchar,
+	ghiChu varchar(100),
 )
 
 create table PHIEUTHU(
@@ -22,22 +22,22 @@ create table PHIEUTHU(
 	phiThuePhong int,
 	tienNuoc int, 
 	tienDien int, 
-	ghiChu varchar,
+	ghiChu varchar(100),
 )
 
 create table PHONGTRO(
 	idPhongTro int Identity  primary key,
-	tenPhong varchar, 
+	tenPhong varchar(100), 
 	giaKhuyenNghi int,
-	tinhTrangPhong varchar, 
+	tinhTrangPhong varchar(100), 
 	chiSoNuocHienHanh int, 
-	chiSoDienHienHanh varchar,
+	chiSoDienHienHanh varchar(100),
 )
 
 create table ACCOUNT(
 	id int Identity  primary key,
-	taiKhoan varchar, 
-	matKhau varchar,
+	taiKhoan varchar(100), 
+	matKhau varchar(100),
 )
 
 create table PHIEUCHI(

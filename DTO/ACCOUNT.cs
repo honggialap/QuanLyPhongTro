@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controller
+namespace DTO
 {
-    public class Class1
+    public class ACCOUNT
     {
+        public string taiKhoan { get; set; }
+        public string matKhau { get; set; }
     }
 }

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B8FC6CE8-71A0-4A95-86B9-2FC036D23D44}</ProjectGuid>
+    <ProjectGuid>{E165C11B-6AC4-40D0-88B4-0E46CD573996}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Controller</RootNamespace>
-    <AssemblyName>Controller</AssemblyName>
+    <RootNamespace>DTO</RootNamespace>
+    <AssemblyName>DTO</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,15 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KetNoi.cs" />
-    <Compile Include="LoginControler.cs" />
+    <Compile Include="PHONGTRO.cs" />
+    <Compile Include="PHIEUTHU.cs" />
+    <Compile Include="PHIEUCHI.cs" />
+    <Compile Include="ACCOUNT.cs" />
+    <Compile Include="HOPDONG.cs" />
+    <Compile Include="KHACHHANG.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{e165c11b-6ac4-40d0-88b4-0e46cd573996}</Project>
-      <Name>DTO</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
