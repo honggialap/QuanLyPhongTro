@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KhachHangModel.cs" />
+    <Compile Include="HopDongModel.cs" />
+    <Compile Include="PhongTroModel.cs" />
+    <Compile Include="PhieuThuModel.cs" />
+    <Compile Include="PhieuChiModel.cs" />
     <Compile Include="LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

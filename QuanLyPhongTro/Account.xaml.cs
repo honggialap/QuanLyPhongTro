@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
 namespace QuanLyPhongTro
 {
     /// <summary>
@@ -22,6 +21,10 @@ namespace QuanLyPhongTro
         public Account()
         {
             InitializeComponent();
+        }
+        private void BtAdd_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

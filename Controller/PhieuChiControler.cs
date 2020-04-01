@@ -12,16 +12,16 @@ using DTO;
 /// </summary>
 namespace Controller
 {
-    public class LoginControler
+    public class PhieuChiControler
     {
         private KetNoi ketNoi = new KetNoi();
-        public List<ACCOUNT> getAll()
+        public List<PHIEUCHI> getAll()
         {
-            List<ACCOUNT> listAccount = new List<ACCOUNT>();
+            List<PHIEUCHI> listPHIEUCHI = new List<PHIEUCHI>();
             string query = string.Empty;
             // câu lệnh thực hiện truy vấn 
-            query += "select [taiKhoan],[matKhau]";
-            query += " from [ACCOUNT]";
+            query += "select [tienDien],[tienNuoc], [tienKhac]";
+            query += " from [PHIEUCHI]";
             using (SqlConnection conn = new SqlConnection(ketNoi.ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -38,10 +38,12 @@ namespace Controller
                         {
                             while (reader.Read())
                             {
-                                ACCOUNT db = new ACCOUNT();
-                                db.taiKhoan = reader["taiKhoan"].ToString();
-                                db.matKhau = reader["matKhau"].ToString();
-                                listAccount.Add(db);
+                                PHIEUCHI db = new PHIEUCHI();
+                                db.idPhieuChi = int.Parse(reader["idPhieuChi"].ToString());
+                                db.tienDien = int.Parse(reader["tienDien"].ToString() != null  ? reader["tienDien"].ToString() : "0");
+                                db.tienNuoc = int.Parse(reader["tienNuoc"].ToString() != null ? reader["tienNuoc"].ToString() : "0");
+                                db.tienKhac = int.Parse(reader["tienKhac"].ToString() != null ? reader["tienKhac"].ToString() : "0");
+                                listPHIEUCHI.Add(db);
                             }
                         }
                         conn.Close();
@@ -54,13 +56,13 @@ namespace Controller
                     }
                 }
             }
-            return listAccount;
+            return listPHIEUCHI;
         }
 
-        public bool edit(ACCOUNT data)
+        public bool edit(PHIEUCHI data)
         {
             string query = String.Empty;
-            query += "update ACCOUNT set [taiKhoan]=@taiKhoan, [matKhau]=@matKhau where [id]=@id ";
+            query += "update PHIEUCHI set [tienDien]=@tienDien, [tienNuoc]=@tienNuoc, [tienKhac]=@tienKhac where [idPhieuChi]=@idPhieuchi ";
             using (SqlConnection con = new SqlConnection(ketNoi.ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -68,9 +70,10 @@ namespace Controller
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@taiKhoan", data.taiKhoan);
-                    cmd.Parameters.AddWithValue("@matKhau", data.matKhau);
-                    cmd.Parameters.AddWithValue("@id", data.id);
+                    cmd.Parameters.AddWithValue("@idPhieuChi", data.idPhieuChi);
+                    cmd.Parameters.AddWithValue("@tienDien", data.tienDien);
+                    cmd.Parameters.AddWithValue("@tienNuoc", data.tienNuoc);
+                    cmd.Parameters.AddWithValue("@tienKhac", data.tienKhac);
                     try
                     {
                         con.Open();

@@ -12,16 +12,16 @@ using DTO;
 /// </summary>
 namespace Controller
 {
-    public class LoginControler
+    public class PhongTroControler
     {
         private KetNoi ketNoi = new KetNoi();
-        public List<ACCOUNT> getAll()
+        public List<PHONGTRO> getAll()
         {
-            List<ACCOUNT> listAccount = new List<ACCOUNT>();
+            List<PHONGTRO> listPhongTro = new List<PHONGTRO>();
             string query = string.Empty;
             // câu lệnh thực hiện truy vấn 
-            query += "select [taiKhoan],[matKhau]";
-            query += " from [ACCOUNT]";
+            query += "select [idPhongTro],[tenPhongTro], [giaKhuyenNghi], [tinhTranhPhong], [chiSoNuocHienHanh], [chiSoDienHienHanh]";
+            query += " from [PHONGTRO]";
             using (SqlConnection conn = new SqlConnection(ketNoi.ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -38,10 +38,14 @@ namespace Controller
                         {
                             while (reader.Read())
                             {
-                                ACCOUNT db = new ACCOUNT();
-                                db.taiKhoan = reader["taiKhoan"].ToString();
-                                db.matKhau = reader["matKhau"].ToString();
-                                listAccount.Add(db);
+                                PHONGTRO db = new PHONGTRO();
+                                db.idPhongTro = int.Parse(reader["idPhongTro"].ToString());
+                                db.tenPhong = reader["tenPhong"].ToString();
+                                db.giaKhuyenNghi = int.Parse(reader["giaKhuyenNghi"].ToString() != null ? reader["giaKhuyenNghi"].ToString() : "0");
+                                db.tinhTrangPhong = reader["tinhTrangPhong"].ToString();
+                                db.chiSoNuocHienHanh = int.Parse(reader["chiSoNuocHienHanh"].ToString() != null ? reader["chiSoNuocHienHanh"].ToString() : "0");
+                                db.chiSoNuocHienHanh = int.Parse(reader["chiSoDienHienHanh"].ToString() != null ? reader["chiSoDienHienHanh"].ToString() : "0");
+                                listPhongTro.Add(db);
                             }
                         }
                         conn.Close();
@@ -54,13 +58,13 @@ namespace Controller
                     }
                 }
             }
-            return listAccount;
+            return listPhongTro;
         }
 
-        public bool edit(ACCOUNT data)
+        public bool edit(PHONGTRO data)
         {
             string query = String.Empty;
-            query += "update ACCOUNT set [taiKhoan]=@taiKhoan, [matKhau]=@matKhau where [id]=@id ";
+            query += "update PHONGTRO set [tenPhong]=@tenPhong, [giaKhuyenNghi]=@giaKhuyenNghi, [tinhTrangPhong]=@tinhTrangPhong, [chiSoNuocHienHanh]=@chiSoNuocHienHanh, [chiSoDienHienHanh]=@chiSoDienHienHanh where [idPhongTro]=@idPhongTro ";
             using (SqlConnection con = new SqlConnection(ketNoi.ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -68,9 +72,13 @@ namespace Controller
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@taiKhoan", data.taiKhoan);
-                    cmd.Parameters.AddWithValue("@matKhau", data.matKhau);
-                    cmd.Parameters.AddWithValue("@id", data.id);
+                    cmd.Parameters.AddWithValue("@tenPhong", data.tenPhong);
+                    cmd.Parameters.AddWithValue("@giaKhuyenNghi", data.giaKhuyenNghi);
+                    cmd.Parameters.AddWithValue("@tinhTrangPhong", data.tinhTrangPhong);
+                    cmd.Parameters.AddWithValue("@chiSoNuocHienHanh", data.chiSoNuocHienHanh);
+                    cmd.Parameters.AddWithValue("@chiSoDienHienHanh", data.chiSoDienHienHanh);
+                    cmd.Parameters.AddWithValue("@idPhongTro", data.idPhongTro);
+
                     try
                     {
                         con.Open();

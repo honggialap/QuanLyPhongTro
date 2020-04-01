@@ -6,7 +6,5 @@
         xmlns:local="clr-namespace:QuanLyPhongTro"
         mc:Ignorable="d"
         Title="Account" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <Grid/>
 </Window>
