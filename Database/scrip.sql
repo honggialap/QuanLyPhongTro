@@ -12,7 +12,8 @@ create table HOPDONG(
 	bieuPhiTuyBien int, 
 	bieuPhiGiaPhong int,
 	idPhieuThu int, 
-	idPhongTro int, 
+	idPhongTro int,
+	idKhachHang int,
 	ghiChu varchar(100),
 )
 
@@ -54,3 +55,5 @@ ALTER TABLE HOPDONG
 ADD FOREIGN KEY (idPhieuThu) REFERENCES PHIEUTHU(idPhieuThu)
 ALTER TABLE HOPDONG
 ADD FOREIGN KEY (idPhongTro) REFERENCES PHONGTRO(idPhongTro);
+ALTER TABLE HOPDONG
+ADD FOREIGN KEY (idKhachHang) REFERENCES KHACHHANG(idKhachHang);
