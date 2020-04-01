@@ -25,17 +25,19 @@ namespace QuanLyPhongTro
             InitializeComponent();
         }
 
-        PHIEUCHI phieuChi = new PHIEUCHI();
-        PhieuChiModel phieuChiModel = new PhieuChiModel();
+        PHIEUTHU phieuThu = new PHIEUTHU();
+        PhieuThuModel phieuThuModel = new PhieuThuModel();
 
         private void BtAdd_Click(object sender, RoutedEventArgs e)
         {
-            phieuChi.tienDien = int.Parse(value1.Text);
-            phieuChi.tienNuoc =int.Parse( value2.Text);
-            phieuChi.tienKhac = int.Parse(value3.Text);
+            phieuThu.phiThuePhong = int.Parse(value4.Text);
+            phieuThu.phiTuyBien = int.Parse(value5.Text);
+            phieuThu.tienDien = int.Parse(value1.Text);
+            phieuThu.tienNuoc = int.Parse( value3.Text);
+            phieuThu.ghiChu = value2.Text;
 
-            phieuChi.idPhieuChi = 1;
-            bool kq = phieuChiModel.Delete(phieuChi);
+            phieuThu.idPhieuThu = 1;
+            bool kq = phieuThuModel.Delete(phieuThu);
             if (kq == true)
             {
                 MessageBox.Show("thanh cong");
