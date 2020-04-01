@@ -24,28 +24,8 @@ namespace QuanLyPhongTro
         {
             InitializeComponent();
         }
-
-        PHIEUTHU phieuThu = new PHIEUTHU();
-        PhieuThuModel phieuThuModel = new PhieuThuModel();
-
         private void BtAdd_Click(object sender, RoutedEventArgs e)
         {
-            phieuThu.phiThuePhong = int.Parse(value4.Text);
-            phieuThu.phiTuyBien = int.Parse(value5.Text);
-            phieuThu.tienDien = int.Parse(value1.Text);
-            phieuThu.tienNuoc = int.Parse( value3.Text);
-            phieuThu.ghiChu = value2.Text;
-
-            phieuThu.idPhieuThu = 1;
-            bool kq = phieuThuModel.Delete(phieuThu);
-            if (kq == true)
-            {
-                MessageBox.Show("thanh cong");
-            }
-            else
-            {
-                MessageBox.Show("that bai");
-            }
         }
     }
 }

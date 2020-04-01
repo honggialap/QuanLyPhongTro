@@ -9,7 +9,7 @@ namespace DTO
     public class PHONGTRO
     {
         public int idPhongTro { get; set; }
-        public int tienPhong { get; set; }
+        public string tenPhong { get; set; }
         public int giaKhuyenNghi { get; set; }
         public string tinhTrangPhong { get; set; }
         public int chiSoNuocHienHanh { get; set; }
