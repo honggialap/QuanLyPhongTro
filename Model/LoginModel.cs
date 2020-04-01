@@ -25,10 +25,7 @@ namespace Model
                     }
                 }
             }
-            catch(Exception err)
-            {
-                return check = false;
-            }
+            catch(Exception err) {}
             return check;
         }
 
@@ -49,9 +46,9 @@ namespace Model
             bool check = false;
             try
             {
-                if (data.taiKhoan == null)
+                if (data.taiKhoan != null)
                 {
-                    if (data.matKhau == null)
+                    if (data.matKhau != null)
                     {
                        bool kq = loginControler.edit(data);
                        check = kq;
@@ -63,6 +60,16 @@ namespace Model
                 return check = false;
             }
             return check;
+        }
+
+        public bool xoa(ACCOUNT data)
+        {
+            LoginControler loginControler = new LoginControler();
+            KetNoi ketNoi = new KetNoi();
+            String query = String.Empty;
+            query += "delete from account where(id ='" + data.id + "')";
+            bool kq = ketNoi.Command(query);
+            return kq;
         }
     }
 }

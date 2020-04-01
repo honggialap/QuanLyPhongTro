@@ -42,6 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="KetNoi.cs" />
+    <Compile Include="KhachHangControler.cs" />
+    <Compile Include="HopDongControler.cs" />
+    <Compile Include="PhongTroControler.cs" />
+    <Compile Include="PhieuThuControler.cs" />
+    <Compile Include="PhieuChiControler.cs" />
     <Compile Include="LoginControler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

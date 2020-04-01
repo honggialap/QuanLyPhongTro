@@ -12,16 +12,16 @@ using DTO;
 /// </summary>
 namespace Controller
 {
-    public class LoginControler
+    public class HopDongControler
     {
         private KetNoi ketNoi = new KetNoi();
-        public List<ACCOUNT> getAll()
+        public List<HOPDONG> getAll()
         {
-            List<ACCOUNT> listAccount = new List<ACCOUNT>();
+            List<HOPDONG> listHopdong = new List<HOPDONG>();
             string query = string.Empty;
             // câu lệnh thực hiện truy vấn 
-            query += "select [taiKhoan],[matKhau]";
-            query += " from [ACCOUNT]";
+            query += "select [idHopDong],[bieuPhiTuyBien], [bieuPhiGiaPhong], [idPhieuThu], [idPhongTro], [ghiChu], [idKhachHang]";
+            query += " from [HOPDONG]";
             using (SqlConnection conn = new SqlConnection(ketNoi.ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -38,10 +38,15 @@ namespace Controller
                         {
                             while (reader.Read())
                             {
-                                ACCOUNT db = new ACCOUNT();
-                                db.taiKhoan = reader["taiKhoan"].ToString();
-                                db.matKhau = reader["matKhau"].ToString();
-                                listAccount.Add(db);
+                                HOPDONG db = new HOPDONG();
+                                db.idHopDong = int.Parse(reader["idHopDong"].ToString());
+                                db.phiTuyBien = int.Parse(reader["bieuPhiTuyBien"].ToString());
+                                db.phiGiaPhong = int.Parse(reader["bieuPhiGiaPhong"].ToString() != null ? reader["bieuPhiGiaPhong"].ToString() : "0");
+                                db.idPhieuThu = int.Parse(reader["idPhieuThu"].ToString() != null ? reader["idPhieuThu"].ToString() : "0");
+                                db.idPhongTro = int.Parse(reader["idPhongTro"].ToString() != null ? reader["idPhongTro"].ToString() : "0");
+                                db.phiGiaPhong = int.Parse(reader["idKhachHang"].ToString() != null ? reader["idKhachHang"].ToString() : "0");
+                                db.ghiChu = reader["ghiChu"].ToString();
+                                listHopdong.Add(db);
                             }
                         }
                         conn.Close();
@@ -54,13 +59,13 @@ namespace Controller
                     }
                 }
             }
-            return listAccount;
+            return listHopdong;
         }
 
-        public bool edit(ACCOUNT data)
+        public bool edit(HOPDONG data)
         {
             string query = String.Empty;
-            query += "update ACCOUNT set [taiKhoan]=@taiKhoan, [matKhau]=@matKhau where [id]=@id ";
+            query += "update HOPDONG set [bieuPhiTuyBien]=@phiTuyBien, [bieuPhiGiaPhong]=@phiGiaPhong, [idPhieuThu]=@idPhieuThu, [idPhongTro]=@idPhongTro, [ghiChu]=@ghiChu, [idKhachHang]=@idKhachHang where [idHopDong]=@idHopDong ";
             using (SqlConnection con = new SqlConnection(ketNoi.ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -68,9 +73,14 @@ namespace Controller
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@taiKhoan", data.taiKhoan);
-                    cmd.Parameters.AddWithValue("@matKhau", data.matKhau);
-                    cmd.Parameters.AddWithValue("@id", data.id);
+                    cmd.Parameters.AddWithValue("@phiTuyBien", data.phiTuyBien);
+                    cmd.Parameters.AddWithValue("@bieuPhiGiaPhong", data.phiGiaPhong);
+                    cmd.Parameters.AddWithValue("@idPhieuThu", data.idPhieuThu);
+                    cmd.Parameters.AddWithValue("@idPhongTro", data.phiGiaPhong);
+                    cmd.Parameters.AddWithValue("@ghiChu", data.ghiChu);
+                    cmd.Parameters.AddWithValue("@idHopDong", data.idHopDong);
+                    cmd.Parameters.AddWithValue("@idKhachHang", data.idKhachHang);
+
                     try
                     {
                         con.Open();
