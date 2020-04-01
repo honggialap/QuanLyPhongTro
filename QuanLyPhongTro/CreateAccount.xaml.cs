@@ -25,22 +25,24 @@ namespace QuanLyPhongTro
             InitializeComponent();
         }
 
-        ACCOUNT account = new ACCOUNT();
-        LoginModel loginModel = new LoginModel();
+        PHIEUCHI phieuChi = new PHIEUCHI();
+        PhieuChiModel phieuChiModel = new PhieuChiModel();
 
         private void BtAdd_Click(object sender, RoutedEventArgs e)
         {
-            account.taiKhoan = taiKhoan.Text;
-            account.matKhau = matKhau.Text;
-            account.id = 4;
-            bool kq = loginModel.xoa(account);
+            phieuChi.tienDien = int.Parse(value1.Text);
+            phieuChi.tienNuoc =int.Parse( value2.Text);
+            phieuChi.tienKhac = int.Parse(value3.Text);
+
+            phieuChi.idPhieuChi = 1;
+            bool kq = phieuChiModel.Delete(phieuChi);
             if (kq == true)
             {
-                MessageBox.Show("thêm thanh cong");
+                MessageBox.Show("thanh cong");
             }
             else
             {
-                MessageBox.Show("thêm fail");
+                MessageBox.Show("that bai");
             }
         }
     }
