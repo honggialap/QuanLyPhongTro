@@ -70,6 +70,7 @@ namespace Controller
                     cmd.CommandText = query;
                     cmd.Parameters.AddWithValue("@taiKhoan", data.taiKhoan);
                     cmd.Parameters.AddWithValue("@matKhau", data.matKhau);
+                    cmd.Parameters.AddWithValue("@id", data.id);
                     try
                     {
                         con.Open();

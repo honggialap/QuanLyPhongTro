@@ -8,6 +8,7 @@ namespace DTO
 {
     public class ACCOUNT
     {
+        public int id { get; set; }
         public string taiKhoan { get; set; }
         public string matKhau { get; set; }
     }
