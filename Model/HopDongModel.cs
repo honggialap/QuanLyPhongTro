@@ -36,5 +36,12 @@ namespace Model
             }
             return check;
         }
+
+        public List<HOPDONG> getAll()
+        {
+            HopDongControler hopDong = new HopDongControler();
+            List<HOPDONG> list = hopDong.getAll();
+            return list;
+        }
     }
 }

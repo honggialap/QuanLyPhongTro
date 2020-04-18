@@ -20,7 +20,7 @@ namespace Controller
             List<KHACHHANG> listKHACHHANG = new List<KHACHHANG>();
             string query = string.Empty;
             // câu lệnh thực hiện truy vấn 
-            query += "select [hoTenKhachHang],[thongTinCaNhan], [lienLac], [ghiChu], [idHopDong]";
+            query += "select [idKhachHang], [hoTenKhachHang],[thongTinCaNhan], [lienLac], [ghiChu]";
             query += " from [KHACHHANG]";
             using (SqlConnection conn = new SqlConnection(ketNoi.ConnectionString))
             {
@@ -43,7 +43,6 @@ namespace Controller
                                 db.hoTenKH = reader["hoTenKhachHang"].ToString();
                                 db.thongTin = reader["thongTinCaNhan"].ToString();
                                 db.lienLac = reader["lienLac"].ToString();
-                                db.idHopDong = int.Parse(reader["idHopDong"].ToString() != null ? reader["idHopDong"].ToString() : "0");
                                 db.ghiChu = reader["ghiChu"].ToString();
                                 listKHACHHANG.Add(db);
                             }
@@ -64,7 +63,7 @@ namespace Controller
         public bool edit(KHACHHANG data)
         {
             string query = String.Empty;
-            query += "update KHACHHANG set [hoTenKhachHang]=@hotenKH, [thongTinCaNhan]=@thongTin, [lienLac]=@lienLac, [idHopDong]=@idHopDong,[ghiChu]=@ghiChu where [idKhachHang]=@idKhachHang ";
+            query += "update KHACHHANG set [hoTenKhachHang]=@hotenKH, [thongTinCaNhan]=@thongTin, [lienLac]=@lienLac,[ghiChu]=@ghiChu where [idKhachHang]=@idKhachHang ";
             using (SqlConnection con = new SqlConnection(ketNoi.ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -77,7 +76,6 @@ namespace Controller
                     cmd.Parameters.AddWithValue("@thongTin", data.thongTin);
                     cmd.Parameters.AddWithValue("@lienLac", data.lienLac);
                     cmd.Parameters.AddWithValue("@ghiChu", data.ghiChu);
-                    cmd.Parameters.AddWithValue("@idHopDong", data.idHopDong);
                     try
                     {
                         con.Open();

@@ -32,14 +32,17 @@ namespace QuanLyPhongTro
         {
             account.taiKhoan = taiKhoan.Text;
             account.matKhau = matKhau.Text;
+            Customer formCustomer = new Customer();
             bool kq = login.DangNhap(account);
             if (kq == true)
             {
-                MessageBox.Show("login thanh cong");
+                MessageBox.Show("Đang nhập thành công");
+                this.Close();
+                formCustomer.Show();
             }
             else
             {
-                MessageBox.Show("login fail");
+                MessageBox.Show("Đăng nhập thất bại", "Vui lòng kiểm tra lại thông tin tài khoản mật khẩu");
             }
         }
     }

@@ -47,9 +47,7 @@ create table PHIEUCHI(
 	tienNuoc int,
 	tienKhac int,
 )
---KhachHang
-ALTER TABLE KHACHHANG
-ADD FOREIGN KEY (idHopDong) REFERENCES HOPDONG(idHopDong)
+
 --Hop Dong 
 ALTER TABLE HOPDONG
 ADD FOREIGN KEY (idPhieuThu) REFERENCES PHIEUTHU(idPhieuThu)

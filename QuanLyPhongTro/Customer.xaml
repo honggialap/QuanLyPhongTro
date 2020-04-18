@@ -5,8 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyPhongTro"
         mc:Ignorable="d"
-        Title="Customer" Height="450" Width="800">
+        Title="Customer" Height="448" Width="948.8">
     <Grid>
-        
+        <DockPanel>
+            <TabControl x:Name="tcSample">
+                <TabItem Name="khachhang" Header="Thông tin khách hàng">
+                    <StackPanel Name="khung" Orientation="Horizontal">
+                        <StackPanel Margin="3,10,3,3.2" Width="324" >
+                            <Label Content="Họ và Tên:" Height="29" VerticalAlignment="Top" Margin="3 0"/>
+                            <TextBox x:Name="tbHoTen" Height="30" TextWrapping="Wrap" Text="{Binding SelectedItem.hoTenKH, ElementName=gridKhachHang}" VerticalAlignment="Top" Padding="0 2" Margin="11,0,8.2,0"/>
+                            <Label Content="Thông tin cá nhân:" Height="32" VerticalAlignment="Top" Margin="3 0"/>
+                            <TextBox x:Name="tbThongTin" Height="30" TextWrapping="Wrap" Text="{Binding SelectedItem.thongTin, ElementName=gridKhachHang}" VerticalAlignment="Top" Padding="0 2" Margin="10,0,9.2,0"/>
+                            <Label Content="Liên lạc:" Height="32" VerticalAlignment="Top" Margin="3 0"/>
+                            <TextBox x:Name="tbLienLac" Height="30" TextWrapping="Wrap" Text="{Binding SelectedItem.lienLac, ElementName=gridKhachHang}" VerticalAlignment="Top" Padding="0 2" Margin="10,0,9.2,0"/>
+                            <Label Content="Ghi Chú:" Height="32" VerticalAlignment="Top" Margin="3 0"/>
+                            <TextBox x:Name="tbGhiChu" Height="92" TextWrapping="Wrap" Text="{Binding SelectedItem.ghiChu, ElementName=gridKhachHang}" VerticalAlignment="Top" Padding="0 2" Margin="10,0,9.2,0"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition SharedSizeGroup="FirstColumn" Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Button x:Name="btThem" Content="Thêm" Height="40" Padding="10" Margin="10" Click="BtThem_Click"/>
+                                <Button x:Name="btXoa" Content="Xóa" Height="40" Padding="10" Margin="44.2,10,29.2,10" Grid.Column="2" Click="BtXoa_Click"/>
+                                <Button x:Name="btSua" Content="Sửa" Height="40" Padding="10" Margin="44.8,10,30.8,10" Grid.Column="1" Click="BtSua_Click"/>
+                            </Grid>
+                        </StackPanel>
+                        <Grid/>
+                        <DataGrid Name="gridKhachHang" Width="599" Margin="3,15,3,14.6" ColumnWidth="SizeToHeader" AutoGenerateColumns="False" SelectionChanged="GridKhachHang_SelectionChanged" FontSize="16" AutomationProperties.IsRowHeader="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding idKhachHang}" ClipboardContentBinding="{x:Null}" Header="Mã khách hàng"/>
+                                <DataGridTextColumn Binding="{Binding hoTenKH}" ClipboardContentBinding="{x:Null}" Header="Họ tên Khách Hàng"/>
+                                <DataGridTextColumn Binding="{Binding thongTin}" ClipboardContentBinding="{x:Null}" Header="Thông tin"/>
+                                <DataGridTextColumn Binding="{Binding lienLac}" Width="100" ClipboardContentBinding="{x:Null}" Header="Liên lạc"/>
+                                <DataGridTextColumn Binding="{Binding ghiChu}" Width="200" ClipboardContentBinding="{x:Null}" Header="Ghi Chú"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <TextBox Name="tbMaHD" Text="{Binding SelectedItem.idKhachHang, ElementName=gridKhachHang}" Visibility="Hidden"/>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Quản lý nhà trọ" />
+                <TabItem Header="Quản lý tài chính" />
+            </TabControl>
+        </DockPanel>
     </Grid>
 </Window>

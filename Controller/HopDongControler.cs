@@ -41,10 +41,10 @@ namespace Controller
                                 HOPDONG db = new HOPDONG();
                                 db.idHopDong = int.Parse(reader["idHopDong"].ToString());
                                 db.phiTuyBien = int.Parse(reader["bieuPhiTuyBien"].ToString());
-                                db.phiGiaPhong = int.Parse(reader["bieuPhiGiaPhong"].ToString() != null ? reader["bieuPhiGiaPhong"].ToString() : "0");
-                                db.idPhieuThu = int.Parse(reader["idPhieuThu"].ToString() != null ? reader["idPhieuThu"].ToString() : "0");
-                                db.idPhongTro = int.Parse(reader["idPhongTro"].ToString() != null ? reader["idPhongTro"].ToString() : "0");
-                                db.phiGiaPhong = int.Parse(reader["idKhachHang"].ToString() != null ? reader["idKhachHang"].ToString() : "0");
+                                db.phiGiaPhong = int.Parse(reader["bieuPhiGiaPhong"].ToString() != "NULL" ? reader["bieuPhiGiaPhong"].ToString() : "0");
+                                db.idPhieuThu = int.Parse(reader["idPhieuThu"].ToString());
+                                db.idPhongTro = int.Parse(reader["idPhongTro"].ToString());
+                                db.phiGiaPhong = int.Parse(reader["idKhachHang"].ToString());
                                 db.ghiChu = reader["ghiChu"].ToString();
                                 listHopdong.Add(db);
                             }

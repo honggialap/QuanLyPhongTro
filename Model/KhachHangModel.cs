@@ -15,8 +15,8 @@ namespace Model
             KhachHangControler khachHang = new KhachHangControler();
             KetNoi ketNoi = new KetNoi();
             String query = String.Empty;
-            query += "insert into KHACHHANG(hoTenKhachHang,thongTinCaNhan,lienLac,ghiChu,idHopDong) " +
-                "values('" + data.hoTenKH + "','" + data.thongTin + "','" + data.lienLac + "','" + data.ghiChu + "','" + data.idHopDong + "')";
+            query += "insert into KHACHHANG(hoTenKhachHang,thongTinCaNhan,lienLac,ghiChu) " +
+                "values('" + data.hoTenKH + "','" + data.thongTin + "','" + data.lienLac + "','" + data.ghiChu + "')";
             bool kq = ketNoi.Command(query);
             return kq;
         }
@@ -36,6 +36,13 @@ namespace Model
                 return check = false;
             }
             return check;
+        }
+
+        public List<KHACHHANG> getAll()
+        {
+            KhachHangControler khControler = new KhachHangControler();
+            List<KHACHHANG> listKhachHang = khControler.getAll();
+            return listKhachHang;
         }
 
         public bool Delete(KHACHHANG data)

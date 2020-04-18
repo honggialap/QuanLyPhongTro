@@ -8,8 +8,10 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button x:Name="btAdd"  Content="Đăng Nhập" HorizontalAlignment="Left" Height="33" Margin="333,248,0,0" VerticalAlignment="Top" Width="90" Click="BtAdd_Click"/>
-        <TextBox x:Name="taiKhoan"  HorizontalAlignment="Left" Height="28" Margin="313,92,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="151"/>
-        <TextBox x:Name="matKhau" HorizontalAlignment="Left" Height="28" Margin="313,139,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="151"/>
+        <TextBox x:Name="taiKhoan"  HorizontalAlignment="Left" Height="28" Margin="313,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="151"/>
+        <TextBox x:Name="matKhau" HorizontalAlignment="Left" Height="28" Margin="313,139,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="151"/>
+        <Label Content="Tài Khoản" HorizontalAlignment="Left" Margin="244,92,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mật Khẩu" HorizontalAlignment="Left" Margin="244,139,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
