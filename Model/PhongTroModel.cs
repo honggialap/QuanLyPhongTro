@@ -10,6 +10,7 @@ namespace Model
 {
     public class PhongTroModel
     {
+        private PhongTroControler phongTro = new PhongTroControler();
         public bool Add(PHONGTRO data)
         {
             KetNoi ketNoi = new KetNoi();
@@ -22,7 +23,6 @@ namespace Model
 
         public bool Edit(PHONGTRO data)
         {
-            PhongTroControler phongTro = new PhongTroControler();
             String query = String.Empty;
             bool check = false;
             try
@@ -44,6 +44,13 @@ namespace Model
             query += "delete from PHONGTRO where(idPhongTro ='" + data.idPhongTro + "')";
             bool kq = ketNoi.Command(query);
             return kq;
+        }
+
+        public List<PHONGTRO> getAll()
+        {
+            PhongTroControler phongTro = new PhongTroControler();
+            List<PHONGTRO> list = phongTro.getAll();
+            return list;
         }
     }
 }

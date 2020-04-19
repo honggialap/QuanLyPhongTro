@@ -20,7 +20,7 @@ namespace Controller
             List<PHONGTRO> listPhongTro = new List<PHONGTRO>();
             string query = string.Empty;
             // câu lệnh thực hiện truy vấn 
-            query += "select [idPhongTro],[tenPhongTro], [giaKhuyenNghi], [tinhTranhPhong], [chiSoNuocHienHanh], [chiSoDienHienHanh]";
+            query += "select [idPhongTro],[tenPhong], [giaKhuyenNghi], [tinhTrangPhong], [chiSoNuocHienHanh], [chiSoDienHienHanh]";
             query += " from [PHONGTRO]";
             using (SqlConnection conn = new SqlConnection(ketNoi.ConnectionString))
             {
@@ -41,10 +41,10 @@ namespace Controller
                                 PHONGTRO db = new PHONGTRO();
                                 db.idPhongTro = int.Parse(reader["idPhongTro"].ToString());
                                 db.tenPhong = reader["tenPhong"].ToString();
-                                db.giaKhuyenNghi = int.Parse(reader["giaKhuyenNghi"].ToString() != null ? reader["giaKhuyenNghi"].ToString() : "0");
+                                db.giaKhuyenNghi = int.Parse(reader["giaKhuyenNghi"].ToString());
                                 db.tinhTrangPhong = reader["tinhTrangPhong"].ToString();
-                                db.chiSoNuocHienHanh = int.Parse(reader["chiSoNuocHienHanh"].ToString() != null ? reader["chiSoNuocHienHanh"].ToString() : "0");
-                                db.chiSoNuocHienHanh = int.Parse(reader["chiSoDienHienHanh"].ToString() != null ? reader["chiSoDienHienHanh"].ToString() : "0");
+                                db.chiSoNuocHienHanh = int.Parse(reader["chiSoNuocHienHanh"].ToString());
+                                db.chiSoNuocHienHanh = int.Parse(reader["chiSoDienHienHanh"].ToString());
                                 listPhongTro.Add(db);
                             }
                         }
