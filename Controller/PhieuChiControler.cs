@@ -20,7 +20,7 @@ namespace Controller
             List<PHIEUCHI> listPHIEUCHI = new List<PHIEUCHI>();
             string query = string.Empty;
             // câu lệnh thực hiện truy vấn 
-            query += "select [tienDien],[tienNuoc], [tienKhac]";
+            query += "select [idPhieuChi], [tenPhieuChi], [tienDien],[tienNuoc], [tienKhac]";
             query += " from [PHIEUCHI]";
             using (SqlConnection conn = new SqlConnection(ketNoi.ConnectionString))
             {
@@ -39,10 +39,11 @@ namespace Controller
                             while (reader.Read())
                             {
                                 PHIEUCHI db = new PHIEUCHI();
-                                db.idPhieuChi = int.Parse(reader["idPhieuChi"].ToString());
-                                db.tienDien = int.Parse(reader["tienDien"] == DBNull.Value ? reader["tienDien"].ToString() : "0");
-                                db.tienNuoc = int.Parse(reader["tienNuoc"] == DBNull.Value ? reader["tienNuoc"].ToString() : "0");
-                                db.tienKhac = int.Parse(reader["tienKhac"] == DBNull.Value ? reader["tienKhac"].ToString() : "0");
+                                db.idPhieuChi = int.Parse(reader["idPhieuChi"] == DBNull.Value ? "0" : reader["idPhieuChi"].ToString() );
+                                db.tenPhieuChi = reader["tenPhieuChi"] == DBNull.Value ? "0" : reader["tenPhieuChi"].ToString();
+                                db.tienDien = int.Parse(reader["tienDien"] == DBNull.Value ? "0" : reader["tienDien"].ToString());
+                                db.tienNuoc = int.Parse(reader["tienNuoc"] == DBNull.Value ? "0" : reader["tienNuoc"].ToString());
+                                db.tienKhac = int.Parse(reader["tienKhac"] == DBNull.Value ? "0" : reader["tienKhac"].ToString());
                                 listPHIEUCHI.Add(db);
                             }
                         }
@@ -62,7 +63,7 @@ namespace Controller
         public bool edit(PHIEUCHI data)
         {
             string query = String.Empty;
-            query += "update PHIEUCHI set [tienDien]=@tienDien, [tienNuoc]=@tienNuoc, [tienKhac]=@tienKhac where [idPhieuChi]=@idPhieuchi ";
+            query += "update PHIEUCHI set [tenPhieuChi]=@tenPhieuChi, [tienDien]=@tienDien, [tienNuoc]=@tienNuoc, [tienKhac]=@tienKhac where [idPhieuChi]=@idPhieuchi ";
             using (SqlConnection con = new SqlConnection(ketNoi.ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -71,6 +72,7 @@ namespace Controller
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
                     cmd.Parameters.AddWithValue("@idPhieuChi", data.idPhieuChi);
+                    cmd.Parameters.AddWithValue("@tenPhieuChi", data.tenPhieuChi);
                     cmd.Parameters.AddWithValue("@tienDien", data.tienDien);
                     cmd.Parameters.AddWithValue("@tienNuoc", data.tienNuoc);
                     cmd.Parameters.AddWithValue("@tienKhac", data.tienKhac);

@@ -55,3 +55,9 @@ ALTER TABLE HOPDONG
 ADD FOREIGN KEY (idPhongTro) REFERENCES PHONGTRO(idPhongTro);
 ALTER TABLE HOPDONG
 ADD FOREIGN KEY (idKhachHang) REFERENCES KHACHHANG(idKhachHang);
+
+--PhieuChi
+alter table PhieuChi add tenPhieuChi varchar(100)
+
+--PhieuThu
+alter table PhieuThu add tenPhieuThu varchar(100)

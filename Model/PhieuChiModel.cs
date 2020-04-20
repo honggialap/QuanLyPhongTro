@@ -15,7 +15,7 @@ namespace Model
             PhieuChiControler PhieuChiControler = new PhieuChiControler();
             KetNoi ketNoi = new KetNoi();
             String query = String.Empty;
-            query += "insert into PHIEUCHI(tienDien,tienNuoc,tienKhac) values('" + data.tienDien + "','" + data.tienNuoc + "','" + data.tienKhac + "')";
+            query += "insert into PHIEUCHI(tenPhieuChi,tienDien,tienNuoc,tienKhac) values('" + data.tenPhieuChi + "','" + data.tienDien + "','" + data.tienNuoc + "','" + data.tienKhac + "')";
             bool kq = ketNoi.Command(query);
             return kq;
         }
@@ -48,12 +48,18 @@ namespace Model
 
         public bool Delete(PHIEUCHI data)
         {
-            PhieuChiControler PhieuChiControler = new PhieuChiControler();
             KetNoi ketNoi = new KetNoi();
             String query = String.Empty;
             query += "delete from PHIEUCHI where(idPhieuChi ='" + data.idPhieuChi + "')";
             bool kq = ketNoi.Command(query);
             return kq;
+        }
+
+        public List<PHIEUCHI> getAll()
+        {
+            PhieuChiControler phieuChiControler = new PhieuChiControler();
+            List<PHIEUCHI> list = phieuChiControler.getAll();
+            return list;
         }
     }
 }

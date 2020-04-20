@@ -27,13 +27,15 @@ namespace QuanLyPhongTro
             //load tab khach hang
             LoadGridKhachHang();
             LoadGridPhongTro();
-            LoadGridHopDong();
+            LoadGridPhieuChi();
+            LoadGridPhieuThu();
         }
 
         private KhachHangModel khModel = new KhachHangModel();
         private PhongTroModel phongTroModel = new PhongTroModel();
         private HopDongModel hopDongModel = new HopDongModel();
         private PhieuThuModel phieuThuModel = new PhieuThuModel();
+        private PhieuChiModel phieuChiModel = new PhieuChiModel();
 
         /// <summary>
         /// /tab khach hang
@@ -154,6 +156,96 @@ namespace QuanLyPhongTro
             //    cbTabHopDongMaPhieuThu.ItemsSource = listPhieuThu;
             //    cbTabHopDongMaPhieuThu.DisplayMemberPath = "idPhieuThu";
             //    cbTabHopDongMaPhieuThu.SelectedValue = "idPhieuThu";
+        }
+
+        ///Phieu Chi
+        private void LoadGridPhieuChi()
+        {
+            List<PHIEUCHI> listPhieuChi = phieuChiModel.getAll();
+            gridTabPhieuChi.ItemsSource = listPhieuChi;
+        }
+
+        private void BtTabPhieuChiThem_Click(object sender, RoutedEventArgs e)
+        {
+            PHIEUCHI phieuChi = new PHIEUCHI();
+            phieuChi.tenPhieuChi = tbTabPhieuChiTenPhieuChi.Text;
+            phieuChi.tienDien = int.Parse(tbTabPhieuChiTienDien.Text);
+            phieuChi.tienNuoc = int.Parse(tbTabPhieuChiTienNuoc.Text);
+            phieuChi.tienKhac = int.Parse(tbTabPhieuChiTienKhac.Text);
+            phieuChiModel.Add(phieuChi);
+            LoadGridPhieuChi();
+        }
+
+        private void BtTabPhieuChiSua_Click(object sender, RoutedEventArgs e)
+        {
+            PHIEUCHI phieuChi = new PHIEUCHI();
+            phieuChi.tenPhieuChi = tbTabPhieuChiTenPhieuChi.Text;
+            phieuChi.tienDien = int.Parse(tbTabPhieuChiTienDien.Text);
+            phieuChi.tienNuoc = int.Parse(tbTabPhieuChiTienNuoc.Text);
+            phieuChi.tienKhac = int.Parse(tbTabPhieuChiTienKhac.Text);
+            phieuChi.idPhieuChi = int.Parse(tbTabPhieuChiMaHD.Text);
+            phieuChiModel.Edit(phieuChi);
+            LoadGridPhieuChi();
+        }
+
+        private void BtTabPhieuChiXoa_Click(object sender, RoutedEventArgs e)
+        {
+            PHIEUCHI phieuChi = new PHIEUCHI();
+            phieuChi.tenPhieuChi = tbTabPhieuChiTenPhieuChi.Text;
+            phieuChi.tienDien = int.Parse(tbTabPhieuChiTienDien.Text);
+            phieuChi.tienNuoc = int.Parse(tbTabPhieuChiTienNuoc.Text);
+            phieuChi.tienKhac = int.Parse(tbTabPhieuChiTienKhac.Text);
+            phieuChi.idPhieuChi = int.Parse(tbTabPhieuChiMaHD.Text);
+            phieuChiModel.Delete(phieuChi);
+            LoadGridPhieuChi();
+        }
+
+        ///Phieu Thu
+        private void LoadGridPhieuThu()
+        {
+            List<PHIEUTHU> listPhieuThu = phieuThuModel.getAll();
+            gridTabPhieuThu.ItemsSource = listPhieuThu;
+        }
+
+        private void TbTabPhieuThuThem_Click(object sender, RoutedEventArgs e)
+        {
+            PHIEUTHU phieuThu = new PHIEUTHU();
+            phieuThu.tenPhieuThu = tbTabPhieuThuTenPhieuThu.Text;
+            phieuThu.phiTuyBien = int.Parse(tbTabPhieuThuPhiTuyBien.Text);
+            phieuThu.phiThuePhong = int.Parse(tbTabPhieuThuPhiThuePhong.Text);
+            phieuThu.tienDien = int.Parse(tbTabPhieuThuTienDien.Text);
+            phieuThu.tienNuoc = int.Parse(tbTabPhieuThuTienNuoc.Text);
+            phieuThu.ghiChu = tbGhiChu.Text;
+            phieuThuModel.Add(phieuThu);
+            LoadGridPhieuThu();
+        }
+
+        private void BtTabPhieuThuSua_Click(object sender, RoutedEventArgs e)
+        {
+            PHIEUTHU phieuThu = new PHIEUTHU();
+            phieuThu.tenPhieuThu = tbTabPhieuThuTenPhieuThu.Text;
+            phieuThu.phiTuyBien = int.Parse(tbTabPhieuThuPhiTuyBien.Text);
+            phieuThu.phiThuePhong = int.Parse(tbTabPhieuThuPhiThuePhong.Text);
+            phieuThu.tienDien = int.Parse(tbTabPhieuThuTienDien.Text);
+            phieuThu.tienNuoc = int.Parse(tbTabPhieuThuTienNuoc.Text);
+            phieuThu.ghiChu = tbGhiChu.Text;
+            phieuThu.idPhieuThu = int.Parse(tbTabPhieuThuMaHD.Text);
+            phieuThuModel.Edit(phieuThu);
+            LoadGridPhieuThu();
+        }
+
+        private void BtTabPhieuThuXoa_Click(object sender, RoutedEventArgs e)
+        {
+            PHIEUTHU phieuThu = new PHIEUTHU();
+            phieuThu.tenPhieuThu = tbTabPhieuThuTenPhieuThu.Text;
+            phieuThu.phiTuyBien = int.Parse(tbTabPhieuThuPhiTuyBien.Text);
+            phieuThu.phiThuePhong = int.Parse(tbTabPhieuThuPhiThuePhong.Text);
+            phieuThu.tienDien = int.Parse(tbTabPhieuThuTienDien.Text);
+            phieuThu.tienNuoc = int.Parse(tbTabPhieuThuTienNuoc.Text);
+            phieuThu.ghiChu = tbGhiChu.Text;
+            phieuThu.idPhieuThu = int.Parse(tbTabPhieuThuMaHD.Text);
+            phieuThuModel.Delete(phieuThu);
+            LoadGridPhieuThu();
         }
     }
 }

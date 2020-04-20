@@ -15,8 +15,8 @@ namespace Model
             PhieuThuControler phieuThuControler = new PhieuThuControler();
             KetNoi ketNoi = new KetNoi();
             String query = String.Empty;
-            query += "insert into PHIEUTHU(phiTuyBien,phiThuePhong,tienDien,tienNuoc,ghiChu) " +
-                "values('" + data.phiTuyBien + "','" + data.phiThuePhong + "','" + data.tienDien + "','" + data.tienNuoc + "','" + data.ghiChu + "')";
+            query += "insert into PHIEUTHU(tenPhieuThu,phiTuyBien,phiThuePhong,tienDien,tienNuoc,ghiChu) " +
+                "values('" + data.tenPhieuThu + "','" + data.phiTuyBien + "','" + data.phiThuePhong + "','" + data.tienDien + "','" + data.tienNuoc + "','" + data.ghiChu + "')";
             bool kq = ketNoi.Command(query);
             return kq;
         }

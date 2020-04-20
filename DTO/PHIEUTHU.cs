@@ -9,6 +9,8 @@ namespace DTO
     public class PHIEUTHU
     {
         public int idPhieuThu { get; set; }
+        public string tenPhieuThu { get; set; }
+
         public int phiTuyBien { get; set; }
         public int phiThuePhong { get; set; }
         public int tienNuoc { get; set; }
