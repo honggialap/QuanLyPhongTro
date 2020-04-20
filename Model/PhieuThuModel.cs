@@ -47,5 +47,12 @@ namespace Model
             bool kq = ketNoi.Command(query);
             return kq;
         }
+
+        public List<PHIEUTHU> getAll()
+        {
+            PhieuThuControler phieuThuControler = new PhieuThuControler();
+            List<PHIEUTHU> list = phieuThuControler.getAll();
+            return list;
+        }
     }
 }

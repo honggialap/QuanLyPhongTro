@@ -39,12 +39,12 @@ namespace Controller
                             while (reader.Read())
                             {
                                 HOPDONG db = new HOPDONG();
-                                db.idHopDong = int.Parse(reader["idHopDong"].ToString());
-                                db.phiTuyBien = int.Parse(reader["bieuPhiTuyBien"].ToString());
-                                db.phiGiaPhong = int.Parse(reader["bieuPhiGiaPhong"].ToString() != "NULL" ? reader["bieuPhiGiaPhong"].ToString() : "0");
-                                db.idPhieuThu = int.Parse(reader["idPhieuThu"].ToString());
-                                db.idPhongTro = int.Parse(reader["idPhongTro"].ToString());
-                                db.phiGiaPhong = int.Parse(reader["idKhachHang"].ToString());
+                                db.idHopDong = int.Parse(reader["idHopDong"] == DBNull.Value ? "0" : reader["idHopDong"].ToString());
+                                db.phiTuyBien = int.Parse(reader["bieuPhiTuyBien"] == DBNull.Value ? "0" : reader["bieuPhiTuyBien"].ToString());
+                                db.phiGiaPhong = int.Parse(reader["bieuPhiGiaPhong"] == DBNull.Value ? "0" : reader["bieuPhiGiaPhong"].ToString());
+                                db.idPhieuThu = int.Parse(reader["idPhieuThu"] == DBNull.Value ? "0" : reader["idPhieuThu"].ToString());
+                                db.idPhongTro = int.Parse(reader["idPhongTro"] == DBNull.Value ? "0" : reader["idPhongTro"].ToString());
+                                db.idKhachHang = int.Parse(reader["idKhachHang"] == DBNull.Value ? "0" : reader["idKhachHang"].ToString());
                                 db.ghiChu = reader["ghiChu"].ToString();
                                 listHopdong.Add(db);
                             }

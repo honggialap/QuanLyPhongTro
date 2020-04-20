@@ -39,11 +39,11 @@ namespace Controller
                             while (reader.Read())
                             {
                                 KHACHHANG db = new KHACHHANG();
-                                db.idKhachHang = int.Parse(reader["idKhachHang"].ToString());
-                                db.hoTenKH = reader["hoTenKhachHang"].ToString();
-                                db.thongTin = reader["thongTinCaNhan"].ToString();
-                                db.lienLac = reader["lienLac"].ToString();
-                                db.ghiChu = reader["ghiChu"].ToString();
+                                db.idKhachHang = int.Parse(reader["idKhachHang"] == DBNull.Value ? "0" : reader["idKhachHang"].ToString());
+                                db.hoTenKH = reader["hoTenKhachHang"] == DBNull.Value ? "0" : reader["hoTenKhachHang"].ToString();
+                                db.thongTin = reader["thongTinCaNhan"] == DBNull.Value ? "0" : reader["thongTinCaNhan"].ToString();
+                                db.lienLac = reader["lienLac"] == DBNull.Value ? "0" : reader["lienLac"].ToString();
+                                db.ghiChu = reader["ghiChu"] == DBNull.Value ? "0" : reader["ghiChu"].ToString();
                                 listKHACHHANG.Add(db);
                             }
                         }

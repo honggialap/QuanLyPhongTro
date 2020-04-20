@@ -40,9 +40,9 @@ namespace Controller
                             {
                                 PHIEUCHI db = new PHIEUCHI();
                                 db.idPhieuChi = int.Parse(reader["idPhieuChi"].ToString());
-                                db.tienDien = int.Parse(reader["tienDien"].ToString() != null  ? reader["tienDien"].ToString() : "0");
-                                db.tienNuoc = int.Parse(reader["tienNuoc"].ToString() != null ? reader["tienNuoc"].ToString() : "0");
-                                db.tienKhac = int.Parse(reader["tienKhac"].ToString() != null ? reader["tienKhac"].ToString() : "0");
+                                db.tienDien = int.Parse(reader["tienDien"] == DBNull.Value ? reader["tienDien"].ToString() : "0");
+                                db.tienNuoc = int.Parse(reader["tienNuoc"] == DBNull.Value ? reader["tienNuoc"].ToString() : "0");
+                                db.tienKhac = int.Parse(reader["tienKhac"] == DBNull.Value ? reader["tienKhac"].ToString() : "0");
                                 listPHIEUCHI.Add(db);
                             }
                         }

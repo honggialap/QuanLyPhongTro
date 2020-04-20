@@ -20,7 +20,7 @@ namespace Controller
             List<PHIEUTHU> listPHIEUTHU = new List<PHIEUTHU>();
             string query = string.Empty;
             // câu lệnh thực hiện truy vấn 
-            query += "select [phiTuyBien],[phiThuePhong], [tienDien], [tienNuoc], [ghiChu]";
+            query += "select [idPhieuThu], [phiTuyBien],[phiThuePhong], [tienDien], [tienNuoc], [ghiChu]";
             query += " from [PHIEUTHU]";
             using (SqlConnection conn = new SqlConnection(ketNoi.ConnectionString))
             {
@@ -40,10 +40,10 @@ namespace Controller
                             {
                                 PHIEUTHU db = new PHIEUTHU();
                                 db.idPhieuThu = int.Parse(reader["idPhieuThu"].ToString());
-                                db.tienDien = int.Parse(reader["tienDien"].ToString() != null  ? reader["tienDien"].ToString() : "0");
-                                db.tienNuoc = int.Parse(reader["tienNuoc"].ToString() != null ? reader["tienNuoc"].ToString() : "0");
-                                db.phiTuyBien = int.Parse(reader["phiTuyBien"].ToString() != null ? reader["phiTuyBien"].ToString() : "0");
-                                db.phiThuePhong = int.Parse(reader["phiThuePhong"].ToString() != null ? reader["phiThuePhong"].ToString() : "0");
+                                db.tienDien = int.Parse(reader["tienDien"] == DBNull.Value ? reader["tienDien"].ToString() : "0");
+                                db.tienNuoc = int.Parse(reader["tienNuoc"] == DBNull.Value ? reader["tienNuoc"].ToString() : "0");
+                                db.phiTuyBien = int.Parse(reader["phiTuyBien"] == DBNull.Value ? reader["phiTuyBien"].ToString() : "0");
+                                db.phiThuePhong = int.Parse(reader["phiThuePhong"] == DBNull.Value ? reader["phiThuePhong"].ToString() : "0");
                                 db.ghiChu = reader["ghiChu"].ToString();
 
                                 listPHIEUTHU.Add(db);

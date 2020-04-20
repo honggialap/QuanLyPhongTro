@@ -39,12 +39,12 @@ namespace Controller
                             while (reader.Read())
                             {
                                 PHONGTRO db = new PHONGTRO();
-                                db.idPhongTro = int.Parse(reader["idPhongTro"].ToString());
-                                db.tenPhong = reader["tenPhong"].ToString();
-                                db.giaKhuyenNghi = int.Parse(reader["giaKhuyenNghi"].ToString());
-                                db.tinhTrangPhong = reader["tinhTrangPhong"].ToString();
-                                db.chiSoNuocHienHanh = int.Parse(reader["chiSoNuocHienHanh"].ToString());
-                                db.chiSoNuocHienHanh = int.Parse(reader["chiSoDienHienHanh"].ToString());
+                                db.idPhongTro = int.Parse(reader["idPhongTro"] == DBNull.Value ? "0" : reader["idPhongTro"].ToString());
+                                db.tenPhong = reader["tenPhong"] == DBNull.Value ? "0" : reader["tenPhong"].ToString();
+                                db.giaKhuyenNghi = int.Parse(reader["giaKhuyenNghi"] == DBNull.Value ? "0" : reader["giaKhuyenNghi"].ToString());
+                                db.tinhTrangPhong = reader["tinhTrangPhong"] == DBNull.Value ? "0" : reader["tinhTrangPhong"].ToString();
+                                db.chiSoNuocHienHanh = int.Parse(reader["chiSoNuocHienHanh"] == DBNull.Value ? "0" : reader["chiSoNuocHienHanh"].ToString());
+                                db.chiSoNuocHienHanh = int.Parse(reader["chiSoDienHienHanh"] == DBNull.Value ? "0" : reader["chiSoDienHienHanh"].ToString());
                                 listPhongTro.Add(db);
                             }
                         }

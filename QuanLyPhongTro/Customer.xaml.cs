@@ -27,10 +27,13 @@ namespace QuanLyPhongTro
             //load tab khach hang
             LoadGridKhachHang();
             LoadGridPhongTro();
+            LoadGridHopDong();
         }
 
         private KhachHangModel khModel = new KhachHangModel();
         private PhongTroModel phongTroModel = new PhongTroModel();
+        private HopDongModel hopDongModel = new HopDongModel();
+        private PhieuThuModel phieuThuModel = new PhieuThuModel();
 
         /// <summary>
         /// /tab khach hang
@@ -127,6 +130,30 @@ namespace QuanLyPhongTro
             phongTro.idPhongTro = int.Parse(tbTabPhongTroMaHD.Text);
             phongTroModel.Delete(phongTro);
             LoadGridPhongTro();
+        }
+
+        /// <summary>
+        /// tab HopDong
+        /// </summary>
+        /// 
+        private void LoadGridHopDong()
+        {
+            //load grid
+            //    List<HOPDONG> listHopDong = hopDongModel.getAll();
+            //    gridTabHopDong.ItemsSource = listHopDong;
+            //    //load combo box
+            //    List<KHACHHANG> listKhachHang = khModel.getAll();
+            //    cbTabHopDongmaKH.ItemsSource = listKhachHang;
+            //    cbTabHopDongmaKH.DisplayMemberPath = "hoTenKH";
+            //    cbTabHopDongmaKH.SelectedValue = "idKhachHang";
+            //    List<PHONGTRO> listPhongTro = phongTroModel.getAll();
+            //    cbTabHopDongMaPhongTro.ItemsSource = listPhongTro;
+            //    cbTabHopDongMaPhongTro.DisplayMemberPath = "tenPhong";
+            //    cbTabHopDongMaPhongTro.SelectedValue = "idPhongTro";
+            //    List<PHIEUTHU> listPhieuThu = phieuThuModel.getAll();
+            //    cbTabHopDongMaPhieuThu.ItemsSource = listPhieuThu;
+            //    cbTabHopDongMaPhieuThu.DisplayMemberPath = "idPhieuThu";
+            //    cbTabHopDongMaPhieuThu.SelectedValue = "idPhieuThu";
         }
     }
 }
