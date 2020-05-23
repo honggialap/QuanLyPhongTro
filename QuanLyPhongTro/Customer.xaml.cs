@@ -24,11 +24,11 @@ namespace QuanLyPhongTro
         public Customer()
         {
             InitializeComponent();
-            //load tab khach hang
             LoadGridKhachHang();
             LoadGridPhongTro();
             LoadGridPhieuChi();
             LoadGridPhieuThu();
+            LoadGridHopDong();
         }
 
         private KhachHangModel khModel = new KhachHangModel();
@@ -37,9 +37,15 @@ namespace QuanLyPhongTro
         private PhieuThuModel phieuThuModel = new PhieuThuModel();
         private PhieuChiModel phieuChiModel = new PhieuChiModel();
 
-        /// <summary>
-        /// /tab khach hang
-        /// </summary>
+        private void resetTabKH()
+        {
+            tbHoTen.Text = null;
+            tbThongTin.Text = null;
+            tbLienLac.Text = null;
+            tbGhiChu.Text = null;
+            tbMaHD.Text = null;
+            LoadGridKhachHang();
+        }
         private void LoadGridKhachHang()
         {
             List<KHACHHANG> listKhachHang = khModel.getAll();
@@ -54,7 +60,7 @@ namespace QuanLyPhongTro
             khachHang.lienLac = tbLienLac.Text;
             khachHang.ghiChu = tbGhiChu.Text;
             khModel.Add(khachHang);
-            LoadGridKhachHang();
+            resetTabKH();
         }
 
         private void BtSua_Click(object sender, RoutedEventArgs e)
@@ -66,7 +72,7 @@ namespace QuanLyPhongTro
             khachHang.ghiChu = tbGhiChu.Text;
             khachHang.idKhachHang = int.Parse(tbMaHD.Text);
             khModel.Edit(khachHang);
-            LoadGridKhachHang();
+            resetTabKH();
         }
 
         private void GridKhachHang_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -83,13 +89,23 @@ namespace QuanLyPhongTro
             khachHang.ghiChu = tbGhiChu.Text;
             khachHang.idKhachHang = int.Parse(tbMaHD.Text);
             khModel.Delete(khachHang);
-            LoadGridKhachHang();
+            resetTabKH();
         }
 
         /// <summary>
         /// tab Phong tro
         /// </summary>
         /// 
+        private void resetTabPhongTro()
+        {
+            tbTabPhongTroTenPhong.Text = null;
+            tbTabPhongTroGia.Text = null;
+            tbTabPhongTroTinhTrang.Text = null;
+            tbTabPhongTroChiSoNuoc.Text = null;
+            tbTabPhongTroChiSoDien.Text = null;
+            tbTabPhongTroMaHD.Text = null;
+            LoadGridPhongTro();
+        }
         private void LoadGridPhongTro()
         {
             List<PHONGTRO> listPhongTro = phongTroModel.getAll();
@@ -105,7 +121,7 @@ namespace QuanLyPhongTro
             phongTro.chiSoNuocHienHanh = int.Parse( tbTabPhongTroChiSoNuoc.Text);
             phongTro.chiSoDienHienHanh = int.Parse(tbTabPhongTroChiSoDien.Text);
             phongTroModel.Add(phongTro);
-            LoadGridPhongTro();
+            resetTabPhongTro();
         }
 
         private void BtTabPhongTroSua_Click(object sender, RoutedEventArgs e)
@@ -118,7 +134,7 @@ namespace QuanLyPhongTro
             phongTro.chiSoDienHienHanh = int.Parse(tbTabPhongTroChiSoDien.Text);
             phongTro.idPhongTro = int.Parse(tbTabPhongTroMaHD.Text);
             phongTroModel.Edit(phongTro);
-            LoadGridPhongTro();
+            resetTabPhongTro();
         }
 
         private void BtTabPhongTroXoa_Click(object sender, RoutedEventArgs e)
@@ -131,34 +147,21 @@ namespace QuanLyPhongTro
             phongTro.chiSoDienHienHanh = int.Parse(tbTabPhongTroChiSoDien.Text);
             phongTro.idPhongTro = int.Parse(tbTabPhongTroMaHD.Text);
             phongTroModel.Delete(phongTro);
-            LoadGridPhongTro();
+            resetTabPhongTro();
         }
-
-        /// <summary>
-        /// tab HopDong
-        /// </summary>
-        /// 
-        private void LoadGridHopDong()
-        {
-            //load grid
-            //    List<HOPDONG> listHopDong = hopDongModel.getAll();
-            //    gridTabHopDong.ItemsSource = listHopDong;
-            //    //load combo box
-            //    List<KHACHHANG> listKhachHang = khModel.getAll();
-            //    cbTabHopDongmaKH.ItemsSource = listKhachHang;
-            //    cbTabHopDongmaKH.DisplayMemberPath = "hoTenKH";
-            //    cbTabHopDongmaKH.SelectedValue = "idKhachHang";
-            //    List<PHONGTRO> listPhongTro = phongTroModel.getAll();
-            //    cbTabHopDongMaPhongTro.ItemsSource = listPhongTro;
-            //    cbTabHopDongMaPhongTro.DisplayMemberPath = "tenPhong";
-            //    cbTabHopDongMaPhongTro.SelectedValue = "idPhongTro";
-            //    List<PHIEUTHU> listPhieuThu = phieuThuModel.getAll();
-            //    cbTabHopDongMaPhieuThu.ItemsSource = listPhieuThu;
-            //    cbTabHopDongMaPhieuThu.DisplayMemberPath = "idPhieuThu";
-            //    cbTabHopDongMaPhieuThu.SelectedValue = "idPhieuThu";
-        }
-
+        /////
         ///Phieu Chi
+        ///
+        private void resetTabPhieuChi()
+        {
+            tbTabPhieuChiTenPhieuChi.Text = null;
+            tbTabPhieuChiTienDien.Text = null;
+            tbTabPhieuChiTienNuoc.Text = null;
+            tbTabPhieuChiTienKhac.Text = null;
+            tbTabPhieuChiMaHD.Text = null;
+            LoadGridPhieuChi();
+
+        }
         private void LoadGridPhieuChi()
         {
             List<PHIEUCHI> listPhieuChi = phieuChiModel.getAll();
@@ -173,7 +176,7 @@ namespace QuanLyPhongTro
             phieuChi.tienNuoc = int.Parse(tbTabPhieuChiTienNuoc.Text);
             phieuChi.tienKhac = int.Parse(tbTabPhieuChiTienKhac.Text);
             phieuChiModel.Add(phieuChi);
-            LoadGridPhieuChi();
+            resetTabPhieuChi();
         }
 
         private void BtTabPhieuChiSua_Click(object sender, RoutedEventArgs e)
@@ -185,7 +188,7 @@ namespace QuanLyPhongTro
             phieuChi.tienKhac = int.Parse(tbTabPhieuChiTienKhac.Text);
             phieuChi.idPhieuChi = int.Parse(tbTabPhieuChiMaHD.Text);
             phieuChiModel.Edit(phieuChi);
-            LoadGridPhieuChi();
+            resetTabPhieuChi();
         }
 
         private void BtTabPhieuChiXoa_Click(object sender, RoutedEventArgs e)
@@ -197,10 +200,22 @@ namespace QuanLyPhongTro
             phieuChi.tienKhac = int.Parse(tbTabPhieuChiTienKhac.Text);
             phieuChi.idPhieuChi = int.Parse(tbTabPhieuChiMaHD.Text);
             phieuChiModel.Delete(phieuChi);
-            LoadGridPhieuChi();
+            resetTabPhieuChi();
         }
 
+        ///
         ///Phieu Thu
+        ///
+        private void resetTabPhieuThu()
+        {
+            tbTabPhieuThuTenPhieuThu.Text = null;
+            tbTabPhieuThuPhiTuyBien.Text = null;
+            tbTabPhieuThuPhiThuePhong.Text = null;
+            tbTabPhieuThuTienDien.Text = null;
+            tbTabPhieuThuTienNuoc.Text = null;
+            tbTabPhieuThuMaHD.Text = null;
+            LoadGridPhieuThu();
+        }
         private void LoadGridPhieuThu()
         {
             List<PHIEUTHU> listPhieuThu = phieuThuModel.getAll();
@@ -217,7 +232,7 @@ namespace QuanLyPhongTro
             phieuThu.tienNuoc = int.Parse(tbTabPhieuThuTienNuoc.Text);
             phieuThu.ghiChu = tbGhiChu.Text;
             phieuThuModel.Add(phieuThu);
-            LoadGridPhieuThu();
+            resetTabPhieuThu();
         }
 
         private void BtTabPhieuThuSua_Click(object sender, RoutedEventArgs e)
@@ -228,10 +243,10 @@ namespace QuanLyPhongTro
             phieuThu.phiThuePhong = int.Parse(tbTabPhieuThuPhiThuePhong.Text);
             phieuThu.tienDien = int.Parse(tbTabPhieuThuTienDien.Text);
             phieuThu.tienNuoc = int.Parse(tbTabPhieuThuTienNuoc.Text);
-            phieuThu.ghiChu = tbGhiChu.Text;
+            phieuThu.ghiChu = tbTabPhieuThuGhiChu.Text;
             phieuThu.idPhieuThu = int.Parse(tbTabPhieuThuMaHD.Text);
             phieuThuModel.Edit(phieuThu);
-            LoadGridPhieuThu();
+            resetTabPhieuThu();
         }
 
         private void BtTabPhieuThuXoa_Click(object sender, RoutedEventArgs e)
@@ -242,10 +257,46 @@ namespace QuanLyPhongTro
             phieuThu.phiThuePhong = int.Parse(tbTabPhieuThuPhiThuePhong.Text);
             phieuThu.tienDien = int.Parse(tbTabPhieuThuTienDien.Text);
             phieuThu.tienNuoc = int.Parse(tbTabPhieuThuTienNuoc.Text);
-            phieuThu.ghiChu = tbGhiChu.Text;
+            phieuThu.ghiChu = tbTabPhieuThuGhiChu.Text;
             phieuThu.idPhieuThu = int.Parse(tbTabPhieuThuMaHD.Text);
             phieuThuModel.Delete(phieuThu);
-            LoadGridPhieuThu();
+            resetTabPhieuThu();
+        }
+
+        /// <summary>
+        /// /tab khach hang
+        /// </summary>
+        /// 
+        private void resetTabHopDong()
+        {
+            tbTabHopDongBieuPhiGiaPhong.Text = null;
+            tbTabHopDongBieuPhiTuyBien.Text = null;
+            tbTabHopDongGhiChu.Text = null;
+            cbTabHopDongIdKhachHang.Text = null;
+            cbTabHopDongIdKhachHang.Text = null;
+            tbTabPhieuThuMaHD.Text = null;
+            LoadGridHopDong();
+        }
+        private void LoadGridHopDong()
+        {
+            List<HOPDONG> listHopDong = hopDongModel.getAll();
+            gridTabHopDong.ItemsSource = listHopDong;
+            List<PHONGTRO> listPhongTro = phongTroModel.getAll();
+            cbTabHopDongIdPhongTro.ItemsSource = listPhongTro;
+            List<KHACHHANG> listKhachHang = khModel.getAll();
+            cbTabHopDongIdKhachHang.ItemsSource = listKhachHang;
+        }
+
+        private void TbTabHopDongThem_Click(object sender, RoutedEventArgs e)
+        {
+            HOPDONG hopDong = new HOPDONG();
+            hopDong.phiTuyBien = int.Parse(tbTabHopDongBieuPhiTuyBien.Text);
+            hopDong.phiGiaPhong = int.Parse(tbTabHopDongBieuPhiGiaPhong.Text);
+            hopDong.idPhongTro = int.Parse(cbTabHopDongIdPhongTro.Text.ToString());
+            hopDong.idKhachHang = int.Parse(cbTabHopDongIdKhachHang.Text.ToString());
+            hopDong.ghiChu = tbTabHopDongGhiChu.Text;
+            hopDongModel.Add(hopDong);
+            resetTabHopDong();
         }
     }
 }

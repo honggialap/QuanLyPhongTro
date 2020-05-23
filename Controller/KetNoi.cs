@@ -11,7 +11,7 @@ namespace Controller
     public class KetNoi
     {
         //thay câu string để kết nối với db
-        public string ConnectionString = @"Data Source=DESKTOP-5IV7DJ4\HOKAGE;Initial Catalog=PhongTro;Integrated Security=True";
+        public string ConnectionString = @"Data Source=HOKAGE\HOKAGE;Initial Catalog=QuanlyNhaTro;Integrated Security=True";
 
         public bool Command(String sql)
         {

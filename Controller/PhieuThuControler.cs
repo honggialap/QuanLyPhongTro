@@ -45,8 +45,7 @@ namespace Controller
                                 db.tienNuoc = int.Parse(reader["tienNuoc"] == DBNull.Value ? "0" : reader["tienNuoc"].ToString());
                                 db.phiTuyBien = int.Parse(reader["phiTuyBien"] == DBNull.Value ? "0" : reader["phiTuyBien"].ToString());
                                 db.phiThuePhong = int.Parse(reader["phiThuePhong"] == DBNull.Value ? "0" : reader["phiThuePhong"].ToString());
-                                db.ghiChu = reader["ghiChu"].ToString();
-
+                                db.ghiChu = reader["ghiChu"] == DBNull.Value ? "0" : reader["ghiChu"].ToString();
                                 listPHIEUTHU.Add(db);
                             }
                         }

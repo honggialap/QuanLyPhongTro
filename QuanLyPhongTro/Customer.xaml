@@ -147,15 +147,57 @@
                         <DataGrid Name="gridTabPhieuThu" Width="634" Margin="3,15,3,14.4" ColumnWidth="SizeToHeader" AutoGenerateColumns="False" FontSize="16" AutomationProperties.IsRowHeader="True">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Binding="{Binding idPhieuThu}" ClipboardContentBinding="{x:Null}" Width="60" Header="Mã"/>
-                                <DataGridTextColumn Binding="{Binding tenPhieuThu}" Width="200" ClipboardContentBinding="{x:Null}" Header="Tên Phiếu Chi"/>
-                                <DataGridTextColumn Binding="{Binding phiTuyBien}" Width="100" ClipboardContentBinding="{x:Null}" Header="Tiền Điện"/>
-                                <DataGridTextColumn Binding="{Binding phiThuePhong}" Width="100" ClipboardContentBinding="{x:Null}" Header="Tiền Nước"/>
-                                <DataGridTextColumn Binding="{Binding tienDien}" Width="100" ClipboardContentBinding="{x:Null}" Header="Tiền Khác"/>
-                                <DataGridTextColumn Binding="{Binding tienNuoc}" Width="100" ClipboardContentBinding="{x:Null}" Header="Tiền Khác"/>
-                                <DataGridTextColumn Binding="{Binding ghiChu}" Width="200" ClipboardContentBinding="{x:Null}" Header="Tiền Khác"/>
+                                <DataGridTextColumn Binding="{Binding tenPhieuThu}" Width="100" ClipboardContentBinding="{x:Null}" Header="Tên Phiếu Chi"/>
+                                <DataGridTextColumn Binding="{Binding phiTuyBien}" Width="100" ClipboardContentBinding="{x:Null}" Header="Phí Tùy biến"/>
+                                <DataGridTextColumn Binding="{Binding phiThuePhong}" Width="100" ClipboardContentBinding="{x:Null}" Header="Phí Thuê Phòng"/>
+                                <DataGridTextColumn Binding="{Binding tienDien}" Width="100" ClipboardContentBinding="{x:Null}" Header="Tiền Điện"/>
+                                <DataGridTextColumn Binding="{Binding tienNuoc}" Width="100" ClipboardContentBinding="{x:Null}" Header="Tiền Nước"/>
+                                <DataGridTextColumn Binding="{Binding ghiChu}" Width="100" ClipboardContentBinding="{x:Null}" Header="Ghi Chú"/>
                             </DataGrid.Columns>
                         </DataGrid>
                         <TextBox Name="tbTabPhieuThuMaHD" Text="{Binding SelectedItem.idPhieuThu, ElementName=gridTabPhieuThu}" Visibility="Hidden"/>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Name="hopDong" Header="Quản Lý Hợp Đồng">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Margin="3,10,3,3.2" Width="324" >
+                            <Label Content="Phí Tùy Biến:" Height="32" VerticalAlignment="Top" Margin="3 2"/>
+                            <TextBox x:Name="tbTabHopDongBieuPhiTuyBien" Height="26" TextWrapping="Wrap" Text="{Binding SelectedItem.tenPhieuThu, ElementName=gridTabPhieuThu}" VerticalAlignment="Top" Padding="0 2" Margin="10,0,9,0"/>
+                            <Label Content="Phí Giá Phòng:" Height="29" VerticalAlignment="Top" Margin="3 2"/>
+                            <TextBox x:Name="tbTabHopDongBieuPhiGiaPhong" Height="30" TextWrapping="Wrap" Text="{Binding SelectedItem.phiTuyBien, ElementName=gridTabPhieuThu}" VerticalAlignment="Top" Padding="0 2" Margin="11,0,8.2,0"/>
+                            <Label Content="Tên Phòng trọ:" Height="32" VerticalAlignment="Top" Margin="3 2"/>
+                            <ComboBox 
+                                x:Name="cbTabHopDongIdPhongTro" 
+                                DisplayMemberPath="idPhongTro"
+                                ContextMenu="{Binding idPhongTro}"
+                                HorizontalAlignment="Left" VerticalAlignment="Top" Width="303" Margin="11,0,0,0" Height="28"/>
+                            <Label Content="Tên Khách hàng:" Height="32" VerticalAlignment="Top" Margin="3 2"/>
+                            <ComboBox 
+                                x:Name="cbTabHopDongIdKhachHang" 
+                                DisplayMemberPath="idKhachHang"
+                                
+                                HorizontalAlignment="Left" VerticalAlignment="Top" Width="303" Margin="11,0,0,0" Height="28"/>
+                            <Label Content="Ghi Chú:" Height="32" VerticalAlignment="Top" Margin="3 2"/>
+                            <TextBox x:Name="tbTabHopDongGhiChu" Height="30" TextWrapping="Wrap" Text="{Binding SelectedItem.tienNuoc, ElementName=gridTabPhieuThu}" VerticalAlignment="Top" Padding="0 2" Margin="10,0,9.2,0"/>
+                            <Grid Height="119" Margin="0,0,0.2,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition SharedSizeGroup="FirstColumn" Width="Auto" MinWidth="147.2"/>
+                                </Grid.ColumnDefinitions>
+                                <Button x:Name="tbTabHopDongThem" Content="Thêm" Padding="10" Margin="120,37,-52,42" Click="TbTabHopDongThem_Click" RenderTransformOrigin="1.391,1.71"/>
+                            </Grid>
+                        </StackPanel>
+                        <Grid/>
+                        <DataGrid Name="gridTabHopDong" Width="634" Margin="3,15,3,14.4" ColumnWidth="SizeToHeader" AutoGenerateColumns="False" FontSize="16" AutomationProperties.IsRowHeader="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding idHopDong}" ClipboardContentBinding="{x:Null}" Width="60" Header="Mã"/>
+                                <DataGridTextColumn Binding="{Binding phiTuyBien}" Width="200" ClipboardContentBinding="{x:Null}" Header="Phí Tùy biến"/>
+                                <DataGridTextColumn Binding="{Binding phiGiaPhong}" Width="100" ClipboardContentBinding="{x:Null}" Header="Giá Phòng"/>
+                                <DataGridTextColumn Binding="{Binding idPhongTro}" Width="100" ClipboardContentBinding="{x:Null}" Header="Mã Phòng"/>
+                                <DataGridTextColumn Binding="{Binding idKhachHang}" Width="100" ClipboardContentBinding="{x:Null}" Header="Mã Khách Hàng"/>
+                                <DataGridTextColumn Binding="{Binding ghiChu}" Width="100" ClipboardContentBinding="{x:Null}" Header="Ghi Chú"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <TextBox Name="tbTabHopDongMaHD" Text="{Binding SelectedItem.idHopDong, ElementName=gridTabHopDong}" Visibility="Hidden"/>
                     </StackPanel>
                 </TabItem>
             </TabControl>
