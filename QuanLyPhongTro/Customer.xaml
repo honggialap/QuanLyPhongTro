@@ -32,7 +32,7 @@
                             </Grid>
                         </StackPanel>
                         <Grid/>
-                        <DataGrid Name="gridKhachHang" Width="599" Margin="3,15,3,14.6" ColumnWidth="SizeToHeader" AutoGenerateColumns="False" SelectionChanged="GridKhachHang_SelectionChanged" FontSize="16" AutomationProperties.IsRowHeader="True">
+                        <DataGrid Name="gridKhachHang" Width="599" Margin="3,15,3,14.6" ColumnWidth="SizeToHeader" AutoGenerateColumns="False" SelectionChanged="GridKhachHang_SelectionChanged" FontSize="16" AutomationProperties.IsRowHeader="True" IsReadOnly="True">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Binding="{Binding idKhachHang}" ClipboardContentBinding="{x:Null}" Header="Mã khách hàng"/>
                                 <DataGridTextColumn Binding="{Binding hoTenKH}" ClipboardContentBinding="{x:Null}" Header="Họ tên Khách Hàng"/>
