@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DTO;
+using Model;
+
 namespace QuanLyPhongTro
 {
     /// <summary>
@@ -18,13 +21,89 @@ namespace QuanLyPhongTro
     /// </summary>
     public partial class Account : Window
     {
+        public Home home;
+        public ACCOUNT account;
+        public LoginModel login;
+
         public Account()
         {
             InitializeComponent();
+            Load();
         }
-        private void BtAdd_Click(object sender, RoutedEventArgs e)
-        {
 
+        public void Load()
+        {
+            login = new LoginModel();
+            dataGrid.ItemsSource = login.Load();
+        }
+
+        private void Window_Closed_1(object sender, EventArgs e)
+        {
+            home.Show();
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        { 
+            if(dataGrid.SelectedItem != null)
+            {
+                account = new ACCOUNT();
+                account = (ACCOUNT)dataGrid.SelectedItem;
+                taiKhoan.Text = account.taiKhoan;
+                matKhau.Text = account.matKhau;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (taiKhoan.Text != "" && matKhau.Text != "")
+            {
+                login = new LoginModel();
+                account = new ACCOUNT();
+                account.taiKhoan = taiKhoan.Text;
+                account.matKhau = matKhau.Text;
+                if(login.ThemTaiKhoan(account))
+                    MessageBox.Show("Thành công");
+                Load();
+            }
+           
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (taiKhoan.Text != "" && matKhau.Text != ""
+                && dataGrid.SelectedItem != null)
+            {
+                login = new LoginModel();
+                account = new ACCOUNT();
+                account = (ACCOUNT)dataGrid.SelectedItem;
+                account.taiKhoan = taiKhoan.Text;
+                account.matKhau = matKhau.Text;
+                if (login.SuaTaiKhoan(account))
+                    MessageBox.Show("Thành công");
+                Load();
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (dataGrid.SelectedItem != null)
+            {
+                login = new LoginModel();
+                account = new ACCOUNT();
+                account = (ACCOUNT)dataGrid.SelectedItem;
+                account.taiKhoan = taiKhoan.Text;
+                account.matKhau = matKhau.Text;
+                if(login.xoa(account))
+                    MessageBox.Show("Thành công");
+                Load();
+            }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            taiKhoan.Text = "";
+            matKhau.Text = "";
+            dataGrid.SelectedItem = null;
         }
     }
 }

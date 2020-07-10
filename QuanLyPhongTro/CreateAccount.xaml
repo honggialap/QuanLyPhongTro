@@ -9,7 +9,7 @@
     <Grid>
         <TextBox Name="value1" HorizontalAlignment="Left" Height="23" Margin="40,49,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="value2" HorizontalAlignment="Left" Height="23" Margin="40,116,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="value3" HorizontalAlignment="Left" Height="23" Margin="193,49,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="value3" HorizontalAlignment="Left" Height="23" Margin="193,49,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="Value3_TextChanged"/>
         <DataGrid HorizontalAlignment="Left" Height="100" Margin="10,263,0,0" VerticalAlignment="Top" Width="774"/>
         <Button Name="btAdd" Content="thêm mới" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="40,199,0,0" Click="BtAdd_Click"/>
         <Button x:Name="btAdd_Copy" Content="sửa" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="166,204,0,0"/>

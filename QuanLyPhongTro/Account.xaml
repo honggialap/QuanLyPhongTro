@@ -5,6 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyPhongTro"
         mc:Ignorable="d"
-        Title="Account" Height="450" Width="800">
-    <Grid/>
+        Title="Account" Height="325" Width="385" Closed="Window_Closed_1">
+    <Grid>
+        <DataGrid Name="dataGrid" HorizontalAlignment="Left" Height="162" Margin="10,10,0,0" VerticalAlignment="Top" Width="357" SelectionChanged="DataGrid_SelectionChanged" IsReadOnly="True" CanUserReorderColumns="False"/>
+        <TextBox Name ="taiKhoan" HorizontalAlignment="Left" Height="23" Margin="10,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="357"/>
+        <TextBox Name ="matKhau" HorizontalAlignment="Left" Height="23" Margin="10,205,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="357"/>
+        <Button Content="Thêm" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Sửa" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="90,260,0,0" Click="Button_Click_1"/>
+        <Button Content="Xóa" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="170,260,0,0" Click="Button_Click_2"/>
+        <Button Content="Dọn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="292,260,0,0" Click="Button_Click_3"/>
+    </Grid>
 </Window>

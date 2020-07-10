@@ -64,14 +64,10 @@
     <Compile Include="Customer.xaml.cs">
       <DependentUpon>Customer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="report.xaml.cs">
-      <DependentUpon>report.xaml</DependentUpon>
+    <Compile Include="Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
     <Page Include="Account.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Business.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -87,6 +83,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Income.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -98,8 +98,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Business.xaml.cs">
-      <DependentUpon>Business.xaml</DependentUpon>
+    <Compile Include="Income.xaml.cs">
+      <DependentUpon>Income.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -109,7 +109,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="report.xaml">
+    <Page Include="Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Outcome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -117,6 +121,9 @@
   <ItemGroup>
     <Compile Include="Motel.xaml.cs">
       <DependentUpon>Motel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Outcome.xaml.cs">
+      <DependentUpon>Outcome.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -139,6 +146,206 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resource\eps\air-conditioner.eps" />
+    <None Include="Resource\eps\backpack.eps" />
+    <None Include="Resource\eps\bar.eps" />
+    <None Include="Resource\eps\bath.eps" />
+    <None Include="Resource\eps\bed.eps" />
+    <None Include="Resource\eps\beds.eps" />
+    <None Include="Resource\eps\bell.eps" />
+    <None Include="Resource\eps\bellboy.eps" />
+    <None Include="Resource\eps\bicycle.eps" />
+    <None Include="Resource\eps\bin.eps" />
+    <None Include="Resource\eps\bunk.eps" />
+    <None Include="Resource\eps\bus.eps" />
+    <None Include="Resource\eps\cake.eps" />
+    <None Include="Resource\eps\calendar.eps" />
+    <None Include="Resource\eps\caravan.eps" />
+    <None Include="Resource\eps\cctv.eps" />
+    <None Include="Resource\eps\champagne.eps" />
+    <None Include="Resource\eps\cocktail.eps" />
+    <None Include="Resource\eps\coffee-cup.eps" />
+    <None Include="Resource\eps\coffee-machine.eps" />
+    <None Include="Resource\eps\comb.eps" />
+    <None Include="Resource\eps\credit-card.eps" />
+    <None Include="Resource\eps\customer-service.eps" />
+    <None Include="Resource\eps\cutlery.eps" />
+    <None Include="Resource\eps\door-hanger-1.eps" />
+    <None Include="Resource\eps\door-hanger.eps" />
+    <None Include="Resource\eps\door-key-1.eps" />
+    <None Include="Resource\eps\door-key.eps" />
+    <None Include="Resource\eps\double-bed.eps" />
+    <None Include="Resource\eps\dumbbell.eps" />
+    <None Include="Resource\eps\entrance.eps" />
+    <None Include="Resource\eps\exit-1.eps" />
+    <None Include="Resource\eps\exit.eps" />
+    <None Include="Resource\eps\fast-food.eps" />
+    <None Include="Resource\eps\fire-extinguisher.eps" />
+    <None Include="Resource\eps\flip-flops.eps" />
+    <None Include="Resource\eps\gel.eps" />
+    <None Include="Resource\eps\golf-1.eps" />
+    <None Include="Resource\eps\golf-2.eps" />
+    <None Include="Resource\eps\golf-3.eps" />
+    <None Include="Resource\eps\golf.eps" />
+    <None Include="Resource\eps\gym.eps" />
+    <None Include="Resource\eps\hairdryer.eps" />
+    <None Include="Resource\eps\hammock.eps" />
+    <None Include="Resource\eps\hanger.eps" />
+    <None Include="Resource\eps\hose.eps" />
+    <None Include="Resource\eps\hotel-1.eps" />
+    <None Include="Resource\eps\hotel-2.eps" />
+    <None Include="Resource\eps\hotel.eps" />
+    <None Include="Resource\eps\iron.eps" />
+    <None Include="Resource\eps\lamp.eps" />
+    <None Include="Resource\eps\lifesaver.eps" />
+    <None Include="Resource\eps\lift-1.eps" />
+    <None Include="Resource\eps\lift.eps" />
+    <None Include="Resource\eps\location.eps" />
+    <None Include="Resource\eps\map.eps" />
+    <None Include="Resource\eps\microwave.eps" />
+    <None Include="Resource\eps\minibar.eps" />
+    <None Include="Resource\eps\no-smoking.eps" />
+    <None Include="Resource\eps\open.eps" />
+    <None Include="Resource\eps\oxygen-tank.eps" />
+    <None Include="Resource\eps\parking.eps" />
+    <None Include="Resource\eps\reception.eps" />
+    <None Include="Resource\eps\rent-a-car.eps" />
+    <None Include="Resource\eps\restaurant-1.eps" />
+    <None Include="Resource\eps\restaurant.eps" />
+    <None Include="Resource\eps\room-key.eps" />
+    <None Include="Resource\eps\room-service-1.eps" />
+    <None Include="Resource\eps\room-service.eps" />
+    <None Include="Resource\eps\room.eps" />
+    <None Include="Resource\eps\safebox-1.eps" />
+    <None Include="Resource\eps\safebox.eps" />
+    <None Include="Resource\eps\shopping-bag.eps" />
+    <None Include="Resource\eps\shower-1.eps" />
+    <None Include="Resource\eps\shower.eps" />
+    <None Include="Resource\eps\soda.eps" />
+    <None Include="Resource\eps\soup.eps" />
+    <None Include="Resource\eps\stairs-1.eps" />
+    <None Include="Resource\eps\stairs.eps" />
+    <None Include="Resource\eps\suitcase.eps" />
+    <None Include="Resource\eps\swimming-pool-1.eps" />
+    <None Include="Resource\eps\swimming-pool.eps" />
+    <None Include="Resource\eps\taxi.eps" />
+    <None Include="Resource\eps\telephone.eps" />
+    <None Include="Resource\eps\television-1.eps" />
+    <None Include="Resource\eps\television.eps" />
+    <None Include="Resource\eps\ticket-1.eps" />
+    <None Include="Resource\eps\ticket.eps" />
+    <None Include="Resource\eps\toilet-paper.eps" />
+    <None Include="Resource\eps\toilets.eps" />
+    <None Include="Resource\eps\toothpaste.eps" />
+    <None Include="Resource\eps\towel.eps" />
+    <None Include="Resource\eps\towels.eps" />
+    <None Include="Resource\eps\trolley-1.eps" />
+    <None Include="Resource\eps\trolley.eps" />
+    <None Include="Resource\eps\waiter.eps" />
+    <None Include="Resource\eps\washing-machine.eps" />
+    <None Include="Resource\eps\whiskey.eps" />
+    <None Include="Resource\eps\wifi.eps" />
+    <None Include="Resource\eps\wine.eps" />
+    <None Include="Resource\psd\air-conditioner.psd" />
+    <None Include="Resource\psd\backpack.psd" />
+    <None Include="Resource\psd\bar.psd" />
+    <None Include="Resource\psd\bath.psd" />
+    <None Include="Resource\psd\bed.psd" />
+    <None Include="Resource\psd\beds.psd" />
+    <None Include="Resource\psd\bell.psd" />
+    <None Include="Resource\psd\bellboy.psd" />
+    <None Include="Resource\psd\bicycle.psd" />
+    <None Include="Resource\psd\bin.psd" />
+    <None Include="Resource\psd\bunk.psd" />
+    <None Include="Resource\psd\bus.psd" />
+    <None Include="Resource\psd\cake.psd" />
+    <None Include="Resource\psd\calendar.psd" />
+    <None Include="Resource\psd\caravan.psd" />
+    <None Include="Resource\psd\cctv.psd" />
+    <None Include="Resource\psd\champagne.psd" />
+    <None Include="Resource\psd\cocktail.psd" />
+    <None Include="Resource\psd\coffee-cup.psd" />
+    <None Include="Resource\psd\coffee-machine.psd" />
+    <None Include="Resource\psd\comb.psd" />
+    <None Include="Resource\psd\credit-card.psd" />
+    <None Include="Resource\psd\customer-service.psd" />
+    <None Include="Resource\psd\cutlery.psd" />
+    <None Include="Resource\psd\door-hanger-1.psd" />
+    <None Include="Resource\psd\door-hanger.psd" />
+    <None Include="Resource\psd\door-key-1.psd" />
+    <None Include="Resource\psd\door-key.psd" />
+    <None Include="Resource\psd\double-bed.psd" />
+    <None Include="Resource\psd\dumbbell.psd" />
+    <None Include="Resource\psd\entrance.psd" />
+    <None Include="Resource\psd\exit-1.psd" />
+    <None Include="Resource\psd\exit.psd" />
+    <None Include="Resource\psd\fast-food.psd" />
+    <None Include="Resource\psd\fire-extinguisher.psd" />
+    <None Include="Resource\psd\flip-flops.psd" />
+    <None Include="Resource\psd\gel.psd" />
+    <None Include="Resource\psd\golf-1.psd" />
+    <None Include="Resource\psd\golf-2.psd" />
+    <None Include="Resource\psd\golf-3.psd" />
+    <None Include="Resource\psd\golf.psd" />
+    <None Include="Resource\psd\gym.psd" />
+    <None Include="Resource\psd\hairdryer.psd" />
+    <None Include="Resource\psd\hammock.psd" />
+    <None Include="Resource\psd\hanger.psd" />
+    <None Include="Resource\psd\hose.psd" />
+    <None Include="Resource\psd\hotel-1.psd" />
+    <None Include="Resource\psd\hotel-2.psd" />
+    <None Include="Resource\psd\hotel.psd" />
+    <None Include="Resource\psd\iron.psd" />
+    <None Include="Resource\psd\lamp.psd" />
+    <None Include="Resource\psd\lifesaver.psd" />
+    <None Include="Resource\psd\lift-1.psd" />
+    <None Include="Resource\psd\lift.psd" />
+    <None Include="Resource\psd\location.psd" />
+    <None Include="Resource\psd\map.psd" />
+    <None Include="Resource\psd\microwave.psd" />
+    <None Include="Resource\psd\minibar.psd" />
+    <None Include="Resource\psd\no-smoking.psd" />
+    <None Include="Resource\psd\open.psd" />
+    <None Include="Resource\psd\oxygen-tank.psd" />
+    <None Include="Resource\psd\parking.psd" />
+    <None Include="Resource\psd\reception.psd" />
+    <None Include="Resource\psd\rent-a-car.psd" />
+    <None Include="Resource\psd\restaurant-1.psd" />
+    <None Include="Resource\psd\restaurant.psd" />
+    <None Include="Resource\psd\room-key.psd" />
+    <None Include="Resource\psd\room-service-1.psd" />
+    <None Include="Resource\psd\room-service.psd" />
+    <None Include="Resource\psd\room.psd" />
+    <None Include="Resource\psd\safebox-1.psd" />
+    <None Include="Resource\psd\safebox.psd" />
+    <None Include="Resource\psd\shopping-bag.psd" />
+    <None Include="Resource\psd\shower-1.psd" />
+    <None Include="Resource\psd\shower.psd" />
+    <None Include="Resource\psd\soda.psd" />
+    <None Include="Resource\psd\soup.psd" />
+    <None Include="Resource\psd\stairs-1.psd" />
+    <None Include="Resource\psd\stairs.psd" />
+    <None Include="Resource\psd\suitcase.psd" />
+    <None Include="Resource\psd\swimming-pool-1.psd" />
+    <None Include="Resource\psd\swimming-pool.psd" />
+    <None Include="Resource\psd\taxi.psd" />
+    <None Include="Resource\psd\telephone.psd" />
+    <None Include="Resource\psd\television-1.psd" />
+    <None Include="Resource\psd\television.psd" />
+    <None Include="Resource\psd\ticket-1.psd" />
+    <None Include="Resource\psd\ticket.psd" />
+    <None Include="Resource\psd\toilet-paper.psd" />
+    <None Include="Resource\psd\toilets.psd" />
+    <None Include="Resource\psd\toothpaste.psd" />
+    <None Include="Resource\psd\towel.psd" />
+    <None Include="Resource\psd\towels.psd" />
+    <None Include="Resource\psd\trolley-1.psd" />
+    <None Include="Resource\psd\trolley.psd" />
+    <None Include="Resource\psd\waiter.psd" />
+    <None Include="Resource\psd\washing-machine.psd" />
+    <None Include="Resource\psd\whiskey.psd" />
+    <None Include="Resource\psd\wifi.psd" />
+    <None Include="Resource\psd\wine.psd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -152,6 +359,209 @@
       <Project>{491f9f19-e32a-4ded-833f-616df2024e67}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\license\license.html" />
+    <Resource Include="Resource\png\air-conditioner.png" />
+    <Resource Include="Resource\png\backpack.png" />
+    <Resource Include="Resource\png\bar.png" />
+    <Resource Include="Resource\png\bath.png" />
+    <Resource Include="Resource\png\bed.png" />
+    <Resource Include="Resource\png\beds.png" />
+    <Resource Include="Resource\png\bell.png" />
+    <Resource Include="Resource\png\bellboy.png" />
+    <Resource Include="Resource\png\bicycle.png" />
+    <Resource Include="Resource\png\bin.png" />
+    <Resource Include="Resource\png\bunk.png" />
+    <Resource Include="Resource\png\bus.png" />
+    <Resource Include="Resource\png\cake.png" />
+    <Resource Include="Resource\png\calendar.png" />
+    <Resource Include="Resource\png\caravan.png" />
+    <Resource Include="Resource\png\cctv.png" />
+    <Resource Include="Resource\png\champagne.png" />
+    <Resource Include="Resource\png\cocktail.png" />
+    <Resource Include="Resource\png\coffee-cup.png" />
+    <Resource Include="Resource\png\coffee-machine.png" />
+    <Resource Include="Resource\png\comb.png" />
+    <Resource Include="Resource\png\credit-card.png" />
+    <Resource Include="Resource\png\customer-service.png" />
+    <Resource Include="Resource\png\cutlery.png" />
+    <Resource Include="Resource\png\door-hanger-1.png" />
+    <Resource Include="Resource\png\door-hanger.png" />
+    <Resource Include="Resource\png\door-key-1.png" />
+    <Resource Include="Resource\png\door-key.png" />
+    <Resource Include="Resource\png\double-bed.png" />
+    <Resource Include="Resource\png\dumbbell.png" />
+    <Resource Include="Resource\png\entrance.png" />
+    <Resource Include="Resource\png\exit-1.png" />
+    <Resource Include="Resource\png\exit.png" />
+    <Resource Include="Resource\png\fast-food.png" />
+    <Resource Include="Resource\png\fire-extinguisher.png" />
+    <Resource Include="Resource\png\flip-flops.png" />
+    <Resource Include="Resource\png\gel.png" />
+    <Resource Include="Resource\png\golf-1.png" />
+    <Resource Include="Resource\png\golf-2.png" />
+    <Resource Include="Resource\png\golf-3.png" />
+    <Resource Include="Resource\png\golf.png" />
+    <Resource Include="Resource\png\gym.png" />
+    <Resource Include="Resource\png\hairdryer.png" />
+    <Resource Include="Resource\png\hammock.png" />
+    <Resource Include="Resource\png\hanger.png" />
+    <Resource Include="Resource\png\hose.png" />
+    <Resource Include="Resource\png\hotel-1.png" />
+    <Resource Include="Resource\png\hotel-2.png" />
+    <Resource Include="Resource\png\hotel.png" />
+    <Resource Include="Resource\png\iron.png" />
+    <Resource Include="Resource\png\lamp.png" />
+    <Resource Include="Resource\png\lifesaver.png" />
+    <Resource Include="Resource\png\lift-1.png" />
+    <Resource Include="Resource\png\lift.png" />
+    <Resource Include="Resource\png\location.png" />
+    <Resource Include="Resource\png\map.png" />
+    <Resource Include="Resource\png\microwave.png" />
+    <Resource Include="Resource\png\minibar.png" />
+    <Resource Include="Resource\png\no-smoking.png" />
+    <Resource Include="Resource\png\open.png" />
+    <Resource Include="Resource\png\oxygen-tank.png" />
+    <Resource Include="Resource\png\parking.png" />
+    <Resource Include="Resource\png\reception.png" />
+    <Resource Include="Resource\png\rent-a-car.png" />
+    <Resource Include="Resource\png\restaurant-1.png" />
+    <Resource Include="Resource\png\restaurant.png" />
+    <Resource Include="Resource\png\room-key.png" />
+    <Resource Include="Resource\png\room-service-1.png" />
+    <Resource Include="Resource\png\room-service.png" />
+    <Resource Include="Resource\png\room.png" />
+    <Resource Include="Resource\png\safebox-1.png" />
+    <Resource Include="Resource\png\safebox.png" />
+    <Resource Include="Resource\png\shopping-bag.png" />
+    <Resource Include="Resource\png\shower-1.png" />
+    <Resource Include="Resource\png\shower.png" />
+    <Resource Include="Resource\png\soda.png" />
+    <Resource Include="Resource\png\soup.png" />
+    <Resource Include="Resource\png\stairs-1.png" />
+    <Resource Include="Resource\png\stairs.png" />
+    <Resource Include="Resource\png\suitcase.png" />
+    <Resource Include="Resource\png\swimming-pool-1.png" />
+    <Resource Include="Resource\png\swimming-pool.png" />
+    <Resource Include="Resource\png\taxi.png" />
+    <Resource Include="Resource\png\telephone.png" />
+    <Resource Include="Resource\png\television-1.png" />
+    <Resource Include="Resource\png\television.png" />
+    <Resource Include="Resource\png\ticket-1.png" />
+    <Resource Include="Resource\png\ticket.png" />
+    <Resource Include="Resource\png\toilet-paper.png" />
+    <Resource Include="Resource\png\toilets.png" />
+    <Resource Include="Resource\png\toothpaste.png" />
+    <Resource Include="Resource\png\towel.png" />
+    <Resource Include="Resource\png\towels.png" />
+    <Resource Include="Resource\png\trolley-1.png" />
+    <Resource Include="Resource\png\trolley.png" />
+    <Resource Include="Resource\png\waiter.png" />
+    <Resource Include="Resource\png\washing-machine.png" />
+    <Resource Include="Resource\png\whiskey.png" />
+    <Resource Include="Resource\png\wifi.png" />
+    <Resource Include="Resource\png\wine.png" />
+    <Content Include="Resource\svg\air-conditioner.svg" />
+    <Content Include="Resource\svg\backpack.svg" />
+    <Content Include="Resource\svg\bar.svg" />
+    <Content Include="Resource\svg\bath.svg" />
+    <Content Include="Resource\svg\bed.svg" />
+    <Content Include="Resource\svg\beds.svg" />
+    <Content Include="Resource\svg\bell.svg" />
+    <Content Include="Resource\svg\bellboy.svg" />
+    <Content Include="Resource\svg\bicycle.svg" />
+    <Content Include="Resource\svg\bin.svg" />
+    <Content Include="Resource\svg\bunk.svg" />
+    <Content Include="Resource\svg\bus.svg" />
+    <Content Include="Resource\svg\cake.svg" />
+    <Content Include="Resource\svg\calendar.svg" />
+    <Content Include="Resource\svg\caravan.svg" />
+    <Content Include="Resource\svg\cctv.svg" />
+    <Content Include="Resource\svg\champagne.svg" />
+    <Content Include="Resource\svg\cocktail.svg" />
+    <Content Include="Resource\svg\coffee-cup.svg" />
+    <Content Include="Resource\svg\coffee-machine.svg" />
+    <Content Include="Resource\svg\comb.svg" />
+    <Content Include="Resource\svg\credit-card.svg" />
+    <Content Include="Resource\svg\customer-service.svg" />
+    <Content Include="Resource\svg\cutlery.svg" />
+    <Content Include="Resource\svg\door-hanger-1.svg" />
+    <Content Include="Resource\svg\door-hanger.svg" />
+    <Content Include="Resource\svg\door-key-1.svg" />
+    <Content Include="Resource\svg\door-key.svg" />
+    <Content Include="Resource\svg\double-bed.svg" />
+    <Content Include="Resource\svg\dumbbell.svg" />
+    <Content Include="Resource\svg\entrance.svg" />
+    <Content Include="Resource\svg\exit-1.svg" />
+    <Content Include="Resource\svg\exit.svg" />
+    <Content Include="Resource\svg\fast-food.svg" />
+    <Content Include="Resource\svg\fire-extinguisher.svg" />
+    <Content Include="Resource\svg\flip-flops.svg" />
+    <Content Include="Resource\svg\gel.svg" />
+    <Content Include="Resource\svg\golf-1.svg" />
+    <Content Include="Resource\svg\golf-2.svg" />
+    <Content Include="Resource\svg\golf-3.svg" />
+    <Content Include="Resource\svg\golf.svg" />
+    <Content Include="Resource\svg\gym.svg" />
+    <Content Include="Resource\svg\hairdryer.svg" />
+    <Content Include="Resource\svg\hammock.svg" />
+    <Content Include="Resource\svg\hanger.svg" />
+    <Content Include="Resource\svg\hose.svg" />
+    <Content Include="Resource\svg\hotel-1.svg" />
+    <Content Include="Resource\svg\hotel-2.svg" />
+    <Content Include="Resource\svg\hotel.svg" />
+    <Content Include="Resource\svg\iron.svg" />
+    <Content Include="Resource\svg\lamp.svg" />
+    <Content Include="Resource\svg\lifesaver.svg" />
+    <Content Include="Resource\svg\lift-1.svg" />
+    <Content Include="Resource\svg\lift.svg" />
+    <Content Include="Resource\svg\location.svg" />
+    <Content Include="Resource\svg\map.svg" />
+    <Content Include="Resource\svg\microwave.svg" />
+    <Content Include="Resource\svg\minibar.svg" />
+    <Content Include="Resource\svg\no-smoking.svg" />
+    <Content Include="Resource\svg\open.svg" />
+    <Content Include="Resource\svg\oxygen-tank.svg" />
+    <Content Include="Resource\svg\parking.svg" />
+    <Content Include="Resource\svg\reception.svg" />
+    <Content Include="Resource\svg\rent-a-car.svg" />
+    <Content Include="Resource\svg\restaurant-1.svg" />
+    <Content Include="Resource\svg\restaurant.svg" />
+    <Content Include="Resource\svg\room-key.svg" />
+    <Content Include="Resource\svg\room-service-1.svg" />
+    <Content Include="Resource\svg\room-service.svg" />
+    <Content Include="Resource\svg\room.svg" />
+    <Content Include="Resource\svg\safebox-1.svg" />
+    <Content Include="Resource\svg\safebox.svg" />
+    <Content Include="Resource\svg\shopping-bag.svg" />
+    <Content Include="Resource\svg\shower-1.svg" />
+    <Content Include="Resource\svg\shower.svg" />
+    <Content Include="Resource\svg\soda.svg" />
+    <Content Include="Resource\svg\soup.svg" />
+    <Content Include="Resource\svg\stairs-1.svg" />
+    <Content Include="Resource\svg\stairs.svg" />
+    <Content Include="Resource\svg\suitcase.svg" />
+    <Content Include="Resource\svg\swimming-pool-1.svg" />
+    <Content Include="Resource\svg\swimming-pool.svg" />
+    <Content Include="Resource\svg\taxi.svg" />
+    <Content Include="Resource\svg\telephone.svg" />
+    <Content Include="Resource\svg\television-1.svg" />
+    <Content Include="Resource\svg\television.svg" />
+    <Content Include="Resource\svg\ticket-1.svg" />
+    <Content Include="Resource\svg\ticket.svg" />
+    <Content Include="Resource\svg\toilet-paper.svg" />
+    <Content Include="Resource\svg\toilets.svg" />
+    <Content Include="Resource\svg\toothpaste.svg" />
+    <Content Include="Resource\svg\towel.svg" />
+    <Content Include="Resource\svg\towels.svg" />
+    <Content Include="Resource\svg\trolley-1.svg" />
+    <Content Include="Resource\svg\trolley.svg" />
+    <Content Include="Resource\svg\waiter.svg" />
+    <Content Include="Resource\svg\washing-machine.svg" />
+    <Content Include="Resource\svg\whiskey.svg" />
+    <Content Include="Resource\svg\wifi.svg" />
+    <Content Include="Resource\svg\wine.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

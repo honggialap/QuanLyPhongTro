@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyPhongTro"
         mc:Ignorable="d"
-        Title="Customer" Height="450" Width="800">
-    <Grid>
-        
+        Title="Customer" Height="409.091" Width="490.625" Closed="Window_Closed">
+    <Grid Margin="0,0,2,-21">
+        <Button Content="Button" HorizontalAlignment="Left" Margin="10,338,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="90,338,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="170,338,0,0" VerticalAlignment="Top" Width="76"/>
+        <DataGrid HorizontalAlignment="Left" Height="183" Margin="10,10,0,0" VerticalAlignment="Top" Width="446" IsReadOnly="True"/>
+        <TextBox Name ="tenKhachHang" HorizontalAlignment="Left" Height="23" Margin="10,198,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="446"/>
+        <TextBox Name ="thongTin" HorizontalAlignment="Left" Height="23" Margin="10,226,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="446"/>
+        <TextBox Name ="lienLac" HorizontalAlignment="Left" Height="23" Margin="10,254,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="446"/>
+        <TextBox Name ="ghiChu" HorizontalAlignment="Left" Height="23" Margin="10,282,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="446"/>
     </Grid>
 </Window>

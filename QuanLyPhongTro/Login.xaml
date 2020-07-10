@@ -5,11 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyPhongTro"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="btAdd"  Content="Đăng Nhập" HorizontalAlignment="Left" Height="33" Margin="333,248,0,0" VerticalAlignment="Top" Width="90" Click="BtAdd_Click"/>
-        <TextBox x:Name="taiKhoan"  HorizontalAlignment="Left" Height="28" Margin="313,92,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="151"/>
-        <TextBox x:Name="matKhau" HorizontalAlignment="Left" Height="28" Margin="313,139,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="151"/>
-
+        Title="Quản Lý Phòng Trọ" Height="128" Width="413" ResizeMode="NoResize">
+    <Grid Margin="0,0,2,0">
+        <Button x:Name="btDangNhap"  Content="Đăng Nhập" HorizontalAlignment="Left" Height="33" Margin="293,29,0,0" VerticalAlignment="Top" Width="90" Click="BtAdd_Click"/>
+        <TextBox x:Name="taiKhoan"  HorizontalAlignment="Left" Height="28" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="260" TextChanged="TaiKhoan_TextChanged"/>
+        <PasswordBox x:Name="matKhau" HorizontalAlignment="Left" Height="28" Margin="10,50,0,0" VerticalAlignment="Top" Width="260"/>
     </Grid>
 </Window>

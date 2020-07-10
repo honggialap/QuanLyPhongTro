@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DTO;
+using Model;
 
 namespace QuanLyPhongTro
 {
@@ -19,9 +21,15 @@ namespace QuanLyPhongTro
     /// </summary>
     public partial class Contract : Window
     {
+        public Home home;
         public Contract()
         {
             InitializeComponent();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            home.Show();
         }
     }
 }

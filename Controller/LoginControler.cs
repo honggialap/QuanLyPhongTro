@@ -20,7 +20,7 @@ namespace Controller
             List<ACCOUNT> listAccount = new List<ACCOUNT>();
             string query = string.Empty;
             // câu lệnh thực hiện truy vấn 
-            query += "select [taiKhoan],[matKhau]";
+            query += "select [id],[taiKhoan],[matKhau]";
             query += " from [ACCOUNT]";
             using (SqlConnection conn = new SqlConnection(ketNoi.ConnectionString))
             {
@@ -39,6 +39,7 @@ namespace Controller
                             while (reader.Read())
                             {
                                 ACCOUNT db = new ACCOUNT();
+                                db.id = Int32.Parse(reader["id"].ToString());
                                 db.taiKhoan = reader["taiKhoan"].ToString();
                                 db.matKhau = reader["matKhau"].ToString();
                                 listAccount.Add(db);

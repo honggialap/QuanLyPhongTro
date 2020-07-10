@@ -31,16 +31,23 @@ namespace QuanLyPhongTro
         private void BtAdd_Click(object sender, RoutedEventArgs e)
         {
             account.taiKhoan = taiKhoan.Text;
-            account.matKhau = matKhau.Text;
+            account.matKhau = matKhau.Password;
             bool kq = login.DangNhap(account);
             if (kq == true)
             {
-                MessageBox.Show("login thanh cong");
+                Home home = new Home();
+                home.Show();
+                this.Hide();
             }
             else
             {
-                MessageBox.Show("login fail");
+                MessageBox.Show("Access denied!");
             }
         }
+
+        private void TaiKhoan_TextChanged(object sender, TextChangedEventArgs e)
+        {
+        }
+
     }
 }

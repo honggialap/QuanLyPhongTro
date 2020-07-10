@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyPhongTro"
         mc:Ignorable="d"
-        Title="Motel" Height="450" Width="800">
+        Title="Motel" Height="453.031" Width="636.364" Closed="Window_Closed">
     <Grid>
-        
+        <DataGrid HorizontalAlignment="Left" Height="220" Margin="10,10,0,0" VerticalAlignment="Top" Width="608"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,235,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="608"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,263,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="608"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,291,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="608"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,319,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="608"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,347,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="608"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="10,375,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="269,380,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="543,380,0,0" VerticalAlignment="Top" Width="75"/>
+
     </Grid>
 </Window>

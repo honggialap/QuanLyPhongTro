@@ -1,0 +1,47 @@
+﻿<Window x:Name="HomeWindow" x:Class="QuanLyPhongTro.Home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLyPhongTro"
+        mc:Ignorable="d"
+        Title="Quản Lý PhòngTrọ" ResizeMode="NoResize" Height="377.777" Width="430.222" Closed="HomeWindow_Closed">
+    <Grid HorizontalAlignment="Left" Margin="10,10,0,0" Width="390" Height="326" VerticalAlignment="Top">
+        <Button HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" Height="150" Click="Button_Click">
+            <StackPanel>
+                <Image Source="/Resource/png/room.png"/>
+                <Label Content="Phòng" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="135,10,0,0" VerticalAlignment="Top" Width="120" Height="150" Click="Button_Click_1">
+            <StackPanel>
+                <Image Source="/Resource/png/reception.png"/>
+                <Label Content="Khách hàng" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="260,10,0,0" VerticalAlignment="Top" Width="120" Height="150" Click="Button_Click_2">
+            <StackPanel>
+                <Image Source="/Resource/png/door-key.png"/>
+                <Label Content="Hợp đồng" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" Width="120" Height="150" Click="Button_Click_4">
+            <StackPanel>
+                <Image Source="/Resource/png/safebox.png"/>
+                <Label Content="Thu" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="135,165,0,0" VerticalAlignment="Top" Width="120" Height="150" Click="Button_Click_3">
+            <StackPanel>
+                <Image Source="/Resource/png/ticket.png"/>
+                <Label Content="Chi" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="260,165,0,0" VerticalAlignment="Top" Width="120" Height="150" Click="Button_Click_5">
+            <StackPanel>
+                <Image Source="/Resource/png/wifi.png"/>
+                <Label Content="Cài đặt Tài khoản" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>

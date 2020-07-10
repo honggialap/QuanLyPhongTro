@@ -71,5 +71,12 @@ namespace Model
             bool kq = ketNoi.Command(query);
             return kq;
         }
+
+        public List<ACCOUNT> Load()
+        {
+            LoginControler loginControler = new LoginControler();
+            List<ACCOUNT> db = loginControler.getAll();
+            return db;
+        }
     }
 }

@@ -47,5 +47,11 @@ namespace Model
             bool kq = ketNoi.Command(query);
             return kq;
         }
+
+        public List<KHACHHANG> Load()
+        {
+
+            return new List<KHACHHANG>();
+        }
     }
 }

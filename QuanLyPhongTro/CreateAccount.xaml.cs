@@ -27,5 +27,10 @@ namespace QuanLyPhongTro
         private void BtAdd_Click(object sender, RoutedEventArgs e)
         {
         }
+
+        private void Value3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

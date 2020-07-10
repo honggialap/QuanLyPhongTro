@@ -14,6 +14,5 @@ namespace DTO
         public string lienLac { get; set; }
         public string ghiChu { get; set; }
         public int idHopDong { get; set; }
-
     }
 }
